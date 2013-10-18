@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
+# Rails + Postgres database, via using "rails _3.2.8_ new shownotes -d postgresql"
 gem 'rails', '3.2.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 
+# Feedzirra for parsing feeds
+gem 'feedzirra', "~> 0.2.0.rc2"
 
 # Gems used only for assets and not required
 # in production environments by default.
