@@ -1,0 +1,24 @@
+<h1>Hello</h1>
+
+<p>Sample feeds:</p>
+<ul>
+  <li><a href="#" class="feed" data-url="http://lavenderhour.libsyn.com/rss">Duncan Trussel Family Hour</a></li>
+  <li><a href="#" class="feed" data-url="http://joeroganexp.joerogan.libsynpro.com/rss">Joe Rogan Experience</a></li>
+  <li><a href="#" class="feed" data-url="http://mysteriousuniverse.org/feed/podcast">Mysterious Universe</a></li>
+</ul>
+
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q, params[:q]) %>
+  <%= submit_tag("Search", :id => "submit") %>
+<% end %>
+
+<% @entries.each do |entry| %>
+  <p>
+    <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
+    <strong><%= entry.title %></strong><br />
+    <%= entry.itunes_duration %><br />
+    <% unless entry.itunes_subtitle.blank? %><%= entry.itunes_subtitle %><br /><% end %>
+    <a href="<%= entry.enclosure_url %>">Listen</a> | <a href="<%= entry.url %>">Webpage</a>
+  </p>
+<% end %>

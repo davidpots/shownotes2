@@ -1,6 +1,8 @@
 Shownotes::Application.routes.draw do
   resources :podcasts
 
+  root :to => 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,6 +1,13 @@
 class Podcast < ActiveRecord::Base
   attr_accessible :description, :image, :name, :url_itunes, :url_rss, :url_web
 
+  def self.get_entries(feed_url)
+    feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+    feed.entries.each do |entry|
+      puts entry.title
+    end
+  end
+
   def self.update_from_feed(feed_url)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     create!(

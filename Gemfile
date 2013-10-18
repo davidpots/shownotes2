@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails + Postgres database, via using "rails _3.2.8_ new shownotes -d postgresql"
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'pg'
 
 # Feedzirra for parsing feeds

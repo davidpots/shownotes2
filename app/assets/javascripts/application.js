@@ -13,3 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $('.feed').click(function(){
+    var url = $(this).data('url');
+    $('#q').val(url);
+    $('#submit').click();
+  });
+});
