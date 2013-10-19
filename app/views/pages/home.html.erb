@@ -1,24 +1,46 @@
-<h1>Hello</h1>
+<div style="border: 1px solid black; padding: 20px; margin: 20px;">
 
-<p>Sample feeds:</p>
-<ul>
-  <li><a href="#" class="feed" data-url="http://lavenderhour.libsyn.com/rss">Duncan Trussel Family Hour</a></li>
-  <li><a href="#" class="feed" data-url="http://joeroganexp.joerogan.libsynpro.com/rss">Joe Rogan Experience</a></li>
-  <li><a href="#" class="feed" data-url="http://mysteriousuniverse.org/feed/podcast">Mysterious Universe</a></li>
-</ul>
+  <h1>Search iTunes Podcasts</h1>
 
-<%= form_tag("/", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q, params[:q]) %>
-  <%= submit_tag("Search", :id => "submit") %>
-<% end %>
+  <%= form_tag("/", method: "get") do %>
+    <%= label_tag(:r, "Search for:") %>
+    <%= text_field_tag(:r, params[:r]) %>
+    <%= submit_tag("Search", :id => "results-submit") %>
+  <% end %>
 
-<% @entries.each do |entry| %>
-  <p>
-    <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
-    <strong><%= entry.title %></strong><br />
-    <%= entry.itunes_duration %><br />
-    <% unless entry.itunes_subtitle.blank? %><%= entry.itunes_subtitle %><br /><% end %>
-    <a href="<%= entry.enclosure_url %>">Listen</a> | <a href="<%= entry.url %>">Webpage</a>
-  </p>
-<% end %>
+  <% @results.each do |result| %>
+  <h3><%= result['collectionName'] %></h3>
+  <ul>
+    <li><img src="<%= result['artworkUrl100'] %>" /></li>
+    <li><a href="<%= result['trackViewUrl'] %>">iTunes</a></li>
+    <li><a href="<%= result['feedUrl'] %>">RSS</a></li>
+  </ul>
+  <% end %>
+
+</div>
+
+<div style="border: 1px solid black; padding: 20px; margin: 20px;">
+  <h1>Enter any RSS Feed</h1>
+  <p>Sample Sample feeds:</p>
+  <ul>
+    <li><a href="#" class="feed" data-url="http://lavenderhour.libsyn.com/rss">Duncan Trussel Family Hour</a></li>
+    <li><a href="#" class="feed" data-url="http://joeroganexp.joerogan.libsynpro.com/rss">Joe Rogan Experience</a></li>
+    <li><a href="#" class="feed" data-url="http://mysteriousuniverse.org/feed/podcast">Mysterious Universe</a></li>
+  </ul>
+
+  <%= form_tag("/", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q, params[:q]) %>
+    <%= submit_tag("Search", :id => "submit") %>
+  <% end %>
+
+  <% @entries.each do |entry| %>
+    <p>
+      <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
+      <strong><%= entry.title %></strong><br />
+      <%= entry.itunes_duration %><br />
+      <% unless entry.itunes_subtitle.blank? %><%= entry.itunes_subtitle %><br /><% end %>
+      <a href="<%= entry.enclosure_url %>">Listen</a> | <a href="<%= entry.url %>">Webpage</a>
+    </p>
+  <% end %>
+</div>

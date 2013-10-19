@@ -7,6 +7,9 @@ gem 'pg'
 # Feedzirra for parsing feeds
 gem 'feedzirra', "~> 0.2.0.rc2"
 
+# iTunes Search API
+gem 'itunes-search-api'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
