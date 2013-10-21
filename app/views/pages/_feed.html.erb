@@ -1,6 +1,13 @@
     
     <% unless @feed.blank? %>
-      <h1><%= @feed.title %></h1>
+      
+      <img width="200" src="<%= @feed.itunes_image %>" />
+      <h2><%= @feed.title %></h2>
+      <p><%= @feed.description %></p>
+      <p>
+        <% unless @feed.url.blank? %><a href="<%= @feed.url %>">Website</a><% end %>
+        <% unless @feed.feed_url.blank? %><a href="<%= @feed.feed_url %>">RSS</a><% end %>
+      </p>
     <% end %>
     <%# @entries.each do |entry| %>
     <% @feed.entries.each do |entry| %>
@@ -9,6 +16,6 @@
         <strong><%= entry.title %></strong><br />
         <% unless entry['itunes_duration'].blank? %><%= entry.itunes_duration %><br /><% end %>
         <% unless entry['itunes_subtitle'].blank? %><%= entry.itunes_subtitle %><br /><% end %>
-        <% unless entry['itunes_enclosure_url'].blank? %><a href="<%= entry.enclosure_url %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
+        <% unless entry['enclosure_url'].blank? %><a href="<%= entry['enclosure_url'] %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
       </p>
     <% end %>
