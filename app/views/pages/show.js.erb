@@ -1,3 +1,10 @@
-$('#magic_link').bind('submit', function() {
+// Initially I thought an event trigger was necessary to make this work,
+// but in reality this was forcing me to submit the form an additional time.
+// By using the 'document.ready()' alone, as shown below, it works!
+//
+// $('#magic_link').bind('submit', function() {
+// $(document).on('submit', '#magic_link', function(){
+
+$(document).ready(function(){
   $("#entries").html("<%= escape_javascript(render(:partial => 'pages/entries')) %>");
 });

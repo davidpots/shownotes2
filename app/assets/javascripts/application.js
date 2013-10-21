@@ -15,7 +15,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $(document).on("click", ".feed", function(e) {
+  $('body').on('click', 'a.feed', function(){
     var url = $(this).data('url');
     $('#magic_link').find('#q').val(url);
     $('#magic_link').submit();
