@@ -15,9 +15,9 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.feed').click(function(){
+  $(document).on("click", ".feed", function(e) {
     var url = $(this).data('url');
-    $('#q').val(url);
-    $('#submit').click();
+    $('#magic_link').find('#q').val(url);
+    $('#magic_link').submit();
   });
 });

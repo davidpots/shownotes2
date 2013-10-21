@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+* { margin: 0; padding: 0; position: relative; box-sizing: border-box;}
+
+body { 
+  font-family: "Helvetica Neue";
+  background: #e6e6e6;
+}
+
+.feed:hover { background: #333; }

@@ -1,4 +1,3 @@
 $('#magic_link').bind('submit', function() {
-  alert("heashasd");
-  $("body").prepend("<%= escape_javascript(render(:partial => 'pages/entries')) %>");
+  $("#entries").html("<%= escape_javascript(render(:partial => 'pages/entries')) %>");
 });
