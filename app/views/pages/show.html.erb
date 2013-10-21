@@ -1,0 +1,11 @@
+<a style="display:block; background: #333; color: #fff; padding: 20px; text-decoration: none;" href="<%= root_url %>">« back to search results</a>
+
+  <% @entries.each do |entry| %>
+    <p>
+      <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
+      <strong><%= entry.title %></strong><br />
+      <%= entry.itunes_duration %><br />
+      <% unless entry.itunes_subtitle.blank? %><%= entry.itunes_subtitle %><br /><% end %>
+      <a href="<%= entry.enclosure_url %>">Listen</a> | <a href="<%= entry.url %>">Webpage</a>
+    </p>
+  <% end %>

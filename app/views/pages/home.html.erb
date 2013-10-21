@@ -1,5 +1,15 @@
 <div style="border: 1px solid black; padding: 20px; margin: 20px;">
 
+<%= link_to "MAGIC LINK", show_url, method: :get, :remote => true, :id => 'magic_link' %>
+
+  
+    <h1>WE HAVE SKIPPY is <%= @dog %></h1>
+  
+
+</div>
+
+<div style="border: 1px solid black; padding: 20px; margin: 20px;">
+
   <h1>Search iTunes Podcasts</h1>
 
   <%= form_tag("/", method: "get") do %>
@@ -9,12 +19,13 @@
   <% end %>
 
   <% @results.each do |result| %>
-  <h3><%= result['collectionName'] %></h3>
-  <ul>
-    <li><img src="<%= result['artworkUrl100'] %>" /></li>
-    <li><a href="<%= result['trackViewUrl'] %>">iTunes</a></li>
-    <li><a href="<%= result['feedUrl'] %>">RSS</a></li>
-  </ul>
+  <div style="overflow:hidden; width:auto; padding: 10px 0; border-bottom: 1px solid #ddd;">
+    <img style="float: left; width: 100px; width: 50px; margin: 0 10px 0 0;" src="<%= result['artworkUrl100'] %>" />
+    <div style="float: left; width: 500px;">
+      <h3 style="margin: 0 0 5px 0;"><a href="#" class="feed" data-url="<%= result['feedUrl'] %>"><%= result['collectionName'] %></a></h3>
+      <p style="margin: 0;"><a href="<%= result['trackViewUrl'] %>">iTunes</a> | <a href="<%= result['feedUrl'] %>">RSS</a></p>
+    </div>
+  </div>
   <% end %>
 
 </div>
@@ -28,7 +39,9 @@
     <li><a href="#" class="feed" data-url="http://mysteriousuniverse.org/feed/podcast">Mysterious Universe</a></li>
   </ul>
 
-  <%= form_tag("/", method: "get") do %>
+  <%#= form_tag(controller: pages, action: show, method: "get") do %>
+  <%#= form_for("/", method: :get, remote: "true") do |f| %>
+  <%= form_tag('/show', method: :get, :remote => true, :id => 'magic_link') do %>  
     <%= label_tag(:q, "Search for:") %>
     <%= text_field_tag(:q, params[:q]) %>
     <%= submit_tag("Search", :id => "submit") %>
@@ -43,4 +56,7 @@
       <a href="<%= entry.enclosure_url %>">Listen</a> | <a href="<%= entry.url %>">Webpage</a>
     </p>
   <% end %>
+  <div id="entries">
+    <%= render @entries %>
+  </div>
 </div>
