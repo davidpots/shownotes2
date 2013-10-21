@@ -23,17 +23,14 @@
 
   <div style="padding: 20px; margin-left: 290px;">
 
-    <%#= form_tag(controller: pages, action: show, method: "get") do %>
-    <%#= form_for("/", method: :get, remote: "true") do |f| %>
-    <%= form_tag('/show', method: :get, :remote => true, :id => 'magic_link') do %>  
+    <%= form_tag('/show', method: :get, :remote => true, :id => 'magic_link', :style => 'visibility: hidden;position: fixed;') do %>  
       <%= label_tag(:q, "Enter any RSS feed:") %>
       <%= text_field_tag(:q, params[:q]) %>
       <%= submit_tag("Search", :id => "submit") %>
     <% end %>
 
-    <div id="entries">
-      <%= render @entries %>
-    </div>
+    <div id="feed"></div>
+
   </div>
 
 </div>

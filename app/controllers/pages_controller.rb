@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @entries = Podcast.get_entries(params[:q])
-    @results = ITunesSearchAPI.search(:term => params[:r], :country => "US", :media => "podcast", :attribute => "descriptionTerm")
+    @results = Podcast.search_itunes(params[:r])
   end
   def show
-    @entries = Podcast.get_entries(params[:q])
+    @feed = Podcast.parse_feed(params[:q])
     respond_to do |format|
       format.js   { render :layout => false }
       format.html { redirect_to show_url }

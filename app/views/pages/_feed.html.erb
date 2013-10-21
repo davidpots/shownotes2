@@ -1,0 +1,14 @@
+    
+    <% unless @feed.blank? %>
+      <h1><%= @feed.title %></h1>
+    <% end %>
+    <%# @entries.each do |entry| %>
+    <% @feed.entries.each do |entry| %>
+      <p>
+        <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
+        <strong><%= entry.title %></strong><br />
+        <% unless entry['itunes_duration'].blank? %><%= entry.itunes_duration %><br /><% end %>
+        <% unless entry['itunes_subtitle'].blank? %><%= entry.itunes_subtitle %><br /><% end %>
+        <% unless entry['itunes_enclosure_url'].blank? %><a href="<%= entry.enclosure_url %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
+      </p>
+    <% end %>
