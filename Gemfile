@@ -10,6 +10,9 @@ gem 'feedzirra', "~> 0.2.0.rc2"
 # iTunes Search API
 gem 'itunes-search-api'
 
+# for heroku, via https://devcenter.heroku.com/articles/getting-started-with-rails3
+gem 'rails_12factor', group: :production
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -38,3 +41,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# added this b/c Heroku told me to (https://devcenter.heroku.com/articles/getting-started-with-rails3)
+ruby '2.0.0'
