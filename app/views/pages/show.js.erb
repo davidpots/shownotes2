@@ -7,4 +7,5 @@
 
 $(document).ready(function(){
   $("#feed").html("<%= escape_javascript(render(:partial => 'pages/feed')) %>");
+  $("#spinner").hide();
 });

@@ -19,5 +19,6 @@ $(document).ready(function(){
     var url = $(this).data('url');
     $('#magic_link').find('#q').val(url);
     $('#magic_link').submit();
+    $('#spinner').show();
   });
 });
