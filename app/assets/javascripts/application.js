@@ -16,6 +16,8 @@
 
 $(document).ready(function(){
   $('body').on('click', 'a.feed', function(){
+    $('a.feed').removeClass('active');
+    $(this).addClass('active');
     var url = $(this).data('url');
     $('#magic_link').find('#q').val(url);
     $('#magic_link').submit();

@@ -1,6 +1,6 @@
 <div style="position: relative;">
 
-  <div style="background: #444; padding: 12px 0; width: 290px; position: fixed; bottom: 0; top: 0;left: 0; overflow-y: auto; color: #fff;">
+  <div class="feeds">
 
     <h1 style="font-size: 21px; margin: 4px 12px 12px; font-weight: normal;">Search iTunes Podcasts</h1>
 
@@ -10,10 +10,10 @@
     <% end %>
 
     <% @results.each do |result| %>
-    <a class="feed" data-url="<%= result['feedUrl'] %>" style="display: block; overflow:hidden; width:auto; padding: 10px 12px; border-top: 1px solid #555; cursor: pointer;">
-      <img style="float: left; height: 40px; width: 40px;" src="<%= result['artworkUrl100'] %>" />
-      <div style="float: right; width: 215px; display: block;">
-        <h3 style="margin: 0 0 5px 0; font-weight: normal; font-size: 14px;"><%= result['collectionName'] %></h3>
+    <a class="feed" data-url="<%= result['feedUrl'] %>">
+      <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
+      <div class="text">
+        <h3><%= result['collectionName'] %></h3>
         <%#= result['trackViewUrl'] %><%#= result['feedUrl'] %>
       </div>
     </a>
