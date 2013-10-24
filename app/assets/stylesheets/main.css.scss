@@ -80,10 +80,8 @@ body {
   }
 }
 
-.feeds .feed:active {
-  .text h3 {
+.feeds .feed:active .text h3 {
     margin-top: 1px;
-  }
 }
 
 .whatever {
