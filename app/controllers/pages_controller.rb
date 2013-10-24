@@ -3,7 +3,9 @@ class PagesController < ApplicationController
     @results = Podcast.search_itunes(params[:r])
   end
   def show
-    @feed = Podcast.parse_feed(params[:q])
+    @feedUrl = params[:url_rss]
+    @url_itunes = params[:url_itunes]
+    @podcast = Podcast.parse_feed(@feedUrl)
     respond_to do |format|
       format.js   { render :layout => false }
       format.html { redirect_to show_url }

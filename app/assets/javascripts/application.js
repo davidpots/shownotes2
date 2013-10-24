@@ -18,9 +18,11 @@ $(document).ready(function(){
   $('body').on('click', 'a.feed', function(){
     $('a.feed').removeClass('active');
     $(this).addClass('active');
-    var url = $(this).data('url');
-    $('#magic_link').find('#q').val(url);
-    $('#magic_link').submit();
+    var url_rss = $(this).data('url-rss');
+    var url_itunes = $(this).data('url-itunes');
+    $('#feed_select').find('#url_rss').val(url_rss);
+    $('#feed_select').find('#url_itunes').val(url_itunes);
+    $('#feed_select').submit();
     $('#spinner').show();
   });
 });

@@ -1,16 +1,19 @@
     
-    <% unless @feed.blank? %>
-      
-      <img width="200" src="<%= @feed.itunes_image %>" />
-      <h2><%= @feed.title %></h2>
-      <p><%= @feed.description %></p>
-      <p>
-        <% unless @feed.url.blank? %><a href="<%= @feed.url %>">Website</a><% end %>
-        <% unless @feed.feed_url.blank? %><a href="<%= @feed.feed_url %>">RSS</a><% end %>
-      </p>
+    <% unless @podcast.blank? %>
+
+      <div class="podcast_info">
+        <img width="200" src="<%= @podcast.itunes_image %>" />
+        <h2><%= @podcast.title %></h2>
+        <p><%= @podcast.description %></p>
+        <p>
+          <% unless @podcast.url.blank? %><a href="<%= @podcast.url %>">Website</a> | <% end %>
+          <a href="<%= @feedUrl %>">RSS</a> | <a href="<%= @url_itunes %>">iTunes</a>
+        </p>
+      </div> <!-- end: .podcast_info -->
+
     <% end %>
-    <%# @entries.each do |entry| %>
-    <% @feed.entries.each do |entry| %>
+
+    <% @podcast.entries.each do |entry| %>
       <p>
         <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
         <strong><%= entry.title %></strong><br />

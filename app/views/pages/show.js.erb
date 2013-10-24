@@ -2,10 +2,10 @@
 // but in reality this was forcing me to submit the form an additional time.
 // By using the 'document.ready()' alone, as shown below, it works!
 //
-// $('#magic_link').bind('submit', function() {
-// $(document).on('submit', '#magic_link', function(){
+// $('#feed_select').bind('submit', function() {
+// $(document).on('submit', '#feed_select', function(){
 
 $(document).ready(function(){
-  $("#feed").html("<%= escape_javascript(render(:partial => 'pages/feed')) %>");
+  $("#podcast_wrapper").html("<%= escape_javascript(render(:partial => 'pages/podcast')) %>");
   $("#spinner").hide();
 });

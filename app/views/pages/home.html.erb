@@ -10,11 +10,10 @@
     <% end %>
 
     <% @results.each do |result| %>
-    <a class="feed" data-url="<%= result['feedUrl'] %>">
+    <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">
       <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
       <div class="text">
         <h3><%= result['collectionName'] %></h3>
-        <%#= result['trackViewUrl'] %><%#= result['feedUrl'] %>
       </div>
     </a>
     <% end %>
@@ -23,15 +22,15 @@
 
   <div style="padding: 20px; margin-left: 290px;">
 
-    <%= form_tag('/show', method: :get, :remote => true, :id => 'magic_link', :style => 'visibility: hidden;position: fixed;') do %>  
-      <%= label_tag(:q, "Enter any RSS feed:") %>
-      <%= text_field_tag(:q, params[:q]) %>
+    <%= form_tag('/show', method: :get, :remote => true, :id => 'feed_select', :style => 'visibility: hidden;position: fixed;') do %>  
+      <%= label_tag(:url_rss, "Enter any RSS feed:") %>
+      <%= text_field_tag :url_rss, params[:url_rss] %>
+      <%= hidden_field_tag :url_itunes, params[:url_itunes] %>
       <%= submit_tag("Search", :id => "submit") %>
     <% end %>
 
     <div id="spinner" style="display: none; position: fixed; height: 400px; width: 400px; background: red; z-index: 10;"></div>
-    <div id="feed">
-    </div>
+    <div id="podcast_wrapper"></div>
 
   </div>
 
