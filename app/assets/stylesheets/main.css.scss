@@ -40,7 +40,7 @@ body {
       display: table-cell;
       vertical-align: middle;
       padding: 0 10px;
-      background: transparent url(/assets/icons/feed-carrot-passive.png) right center no-repeat;
+      background: transparent url(/assets/_icons/feed-carrot-passive.png) right center no-repeat;
       background-size: 8px 12px;
       transition: background-image 0.1s ease-in-out;
 
@@ -71,7 +71,7 @@ body {
   background-color: $dark-primary-active; 
   transition: background-color 0.1s ease-in-out;
   .text {
-    background-image: url(/assets/icons/feed-carrot-active.png);
+    background-image: url(/assets/_icons/feed-carrot-active.png);
     transition: background-image 0.1s ease-in-out;
     h3 {
       color: #eaf1f8;
