@@ -6,6 +6,6 @@
 // $(document).on('submit', '#feed_select', function(){
 
 $(document).ready(function(){
-  $("#podcast_wrapper").html("<%= escape_javascript(render(:partial => 'pages/podcast')) %>");
-  $("#spinner").hide();
+  $("#podcast_wrap_inner").html("<%= escape_javascript(render(:partial => 'pages/podcast')) %>");
+  $(".spinner").hide();
 });

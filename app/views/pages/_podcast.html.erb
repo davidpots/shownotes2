@@ -13,12 +13,16 @@
 
     <% end %>
 
-    <% @podcast.entries.each do |entry| %>
-      <p>
-        <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
-        <strong><%= entry.title %></strong><br />
-        <% unless entry['itunes_duration'].blank? %><%= entry.itunes_duration %><br /><% end %>
-        <% unless entry['itunes_subtitle'].blank? %><%= entry.itunes_subtitle %><br /><% end %>
-        <% unless entry['enclosure_url'].blank? %><a href="<%= entry['enclosure_url'] %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
-      </p>
-    <% end %>
+      <div class="podcast_episodes">
+
+        <% @podcast.entries.each do |entry| %>
+          <p>
+            <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
+            <strong><%= entry.title %></strong><br />
+            <% unless entry['itunes_duration'].blank? %><%= entry.itunes_duration %><br /><% end %>
+            <% unless entry['itunes_subtitle'].blank? %><%= entry.itunes_subtitle %><br /><% end %>
+            <% unless entry['enclosure_url'].blank? %><a href="<%= entry['enclosure_url'] %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
+          </p>
+        <% end %>
+
+      </div> <!-- end: .podcast_episodes -->

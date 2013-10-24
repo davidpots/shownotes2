@@ -20,18 +20,17 @@
 
   </div>
 
-  <div style="padding: 20px; margin-left: 290px;">
 
+    <%# This is the hidden form that accepts an RSS feed, and displays that feed's info + entries on the page %>
     <%= form_tag('/show', method: :get, :remote => true, :id => 'feed_select', :style => 'visibility: hidden;position: fixed;') do %>  
-      <%= label_tag(:url_rss, "Enter any RSS feed:") %>
       <%= text_field_tag :url_rss, params[:url_rss] %>
       <%= hidden_field_tag :url_itunes, params[:url_itunes] %>
       <%= submit_tag("Search", :id => "submit") %>
     <% end %>
 
-    <div id="spinner" style="display: none; position: fixed; height: 400px; width: 400px; background: red; text-align: center; line-height: 400px; z-index: 10; color: white;">unsexy loading...</div>
-    <div id="podcast_wrapper"></div>
-
+  <div class="podcast_wrap_outer">
+    <div class="spinner">unsexy loading...</div>
+    <div id="podcast_wrap_inner"></div>
   </div>
 
 </div>
