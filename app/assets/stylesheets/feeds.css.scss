@@ -4,11 +4,18 @@
   width: 290px;
   position: fixed;
   bottom: 0;
-  top: 0; 
+  top: 40px; 
   left: 0;
   overflow-y: auto;
   color: #fff;
   border-right: 1px solid $dark-border-dark;
+
+  .feeds-wrap-inner {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;    
+  }
 
   .feed {
     display: table;

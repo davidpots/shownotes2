@@ -23,8 +23,12 @@ $(document).ready(function(){
     $('#feed_select').find('#url_rss').val(url_rss);
     $('#feed_select').find('#url_itunes').val(url_itunes);
     $('#feed_select').submit();
-    $('.spinner').show();
     $('#podcast_wrap_inner').css('opacity','0.3');
+    $('.spinner').show();
   });
+});
 
+$(window).bind("load", function() {
+  $('.feeds a.feed').first().click();
+  $('.feeds-wrap-inner').css('opacity','1');
 });

@@ -1,14 +1,20 @@
 <div style="position: relative;">
 
+  <div class="title-bar">
+    <h1>PodGnostic</h1>
+    <p>elegant podcast searching, built by <a href="http://davidpots.com">@davidpots</a></p>
+  </div>
+
   <div class="feeds">
 
-    <h1 style="font-size: 21px; margin: 4px 12px 12px; font-weight: normal;">Search iTunes Podcasts</h1>
+    <h1 style="font-size: 14px; margin: 4px 12px 5px; font-weight: 600; color: #888;">search for a topic...</h1>
 
-    <%= form_tag("/", method: "get", style: "height: 24px; margin: 0 12px 15px;") do %>
-      <%= text_field_tag(:r, params[:r], :style => "font-family: 'helvetica neue'; position: absolute; top: 0; left: 0; width: 200px; border: none; height: 28px; line-height: 28px; font-size: 14px; padding: 0 4px;") %>
-      <%= submit_tag("search", :id => "results-submit", :style => "font-family: 'helvetica neue'; background: #ff00ff; color: #fff; cursor: pointer; position: absolute; top: 0; right: 0; right: 0px; border: none; height: 28px; font-size: 14px; line-height: 28px; width: 64px;") %>
+    <%= form_tag("/", method: "get", style: "height: 24px; margin: 0 12px 21px;") do %>
+      <%= text_field_tag(:r, params[:r], :style => "font-family: 'source sans pro','helvetica neue'; position: absolute; top: 0; left: 0; width: 200px; border: none; height: 28px; line-height: 28px; font-size: 14px; padding: 0 4px;") %>
+      <%= submit_tag("search", :id => "results-submit", :style => "font-family: 'source sans pro','helvetica neue'; background: purple; color: rgba(255,255,255,0.8); cursor: pointer; position: absolute; top: 0; right: 0; right: 0px; border: none; height: 28px; font-size: 14px; line-height: 28px; width: 64px;") %>
     <% end %>
 
+    <div class="feeds-wrap-inner">
     <% @results.each do |result| %>
     <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">
       <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
@@ -17,6 +23,7 @@
       </div>
     </a>
     <% end %>
+  </div> <!-- end: .feeds-wrap-inner -->
 
   </div>
 
