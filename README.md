@@ -2,7 +2,7 @@
 
 That, and only that, is what this app is for. At the core it uses the *Feedzirra* gem, which when given an RSS URL will parse it. Example usage from console:
 
-    Feedzirra::Feed.fetch_and_parse("http://feeds.5by5.tv/amplified")
+    Feedzirra::Feed.fetch_and_parse("http://feeds.feedburner.com/SlateCultureGabfest")
 
 Using the command above, you might do something like
 

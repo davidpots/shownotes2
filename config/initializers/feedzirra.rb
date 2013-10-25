@@ -1,0 +1,1 @@
+Feedzirra::Feed.add_feed_class(Feedzirra::Parser::ITunesRSS)
