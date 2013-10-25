@@ -1,9 +1,29 @@
 * { margin: 0; padding: 0; position: relative; box-sizing: border-box;}
 
-body { 
-  font-family: "Source Sans Pro", "Helvetica Neue";
-  background: #eee;
+@mixin clearfix {
+    zoom:1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
+body { 
+  font-family: "Source Sans Pro", "Helvetica Neue";
+  background: #e6e6e6;
+  font-size: 15px;
+  line-height: 20px;
+  color: #4f4f4f;
+}
+
+a {
+  text-decoration: none;
+  color: #006FAD;
+}
+
+@import "buttons";
 @import "feeds";
 @import "podcast";

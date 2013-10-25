@@ -2,13 +2,20 @@
     <% unless @podcast.blank? %>
 
       <div class="podcast_info">
-        <img width="200" src="<%= @podcast.itunes_image %>" />
-        <h2><%= @podcast.title %></h2>
-        <p><%= @podcast.description %></p>
-        <p>
-          <% unless @podcast.url.blank? %><a href="<%= @podcast.url %>">Website</a> | <% end %>
-          <a href="<%= @feedUrl %>">RSS</a> | <a href="<%= @url_itunes %>">iTunes</a>
-        </p>
+        <div class="thumbnail">
+          <img width="123" src="<%= @podcast.itunes_image %>" />
+        </div> <!-- end: .thumbnail -->
+        <div class="desc">
+          <h2><%= @podcast.title %></h2>
+          <p><%= @podcast.description %></p>
+          <p>
+            <% unless @podcast.url.blank? %>
+              <a class="btn btn-link" href="<%= @podcast.url %>"><span>Website</span></a>
+            <% end %>
+            <a class="btn btn-feed" href="<%= @feedUrl %>"><span>RSS</span></a>
+            <a class="btn btn-feed" href="<%= @url_itunes %>"><span>iTunes</span></a>
+          </p>
+        </div> <!-- end: .desc -->
       </div> <!-- end: .podcast_info -->
 
     <% end %>
@@ -16,13 +23,25 @@
       <div class="podcast_episodes">
 
         <% @podcast.entries.each do |entry| %>
-          <p>
-            <span style="color: #aaa; font-size: 12px;"><%= entry.published.strftime("%b %e %y, %l:%M %p") %></span><br />
-            <strong><%= entry.title %></strong><br />
-            <% unless entry['itunes_duration'].blank? %><%= entry.itunes_duration %><br /><% end %>
-            <% unless entry['itunes_subtitle'].blank? %><%= entry.itunes_subtitle %><br /><% end %>
-            <% unless entry['enclosure_url'].blank? %><a href="<%= entry['enclosure_url'] %>">Listen</a><% end %> | <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
-          </p>
+          <div class="episode">
+            <div class="datetime">
+              <span class="date"><%= entry.published.strftime("%b %e, %Y") %></span>
+              <span class="time"><%= entry.published.strftime("%l:%M %p") %></span>
+            </div> <!-- end: .date -->
+            <div class="desc">
+              <h3><%= entry.title %></h3>
+              <% unless entry['itunes_subtitle'].blank? %><p><%= entry.itunes_subtitle %></p><% end %>
+              <%# unless entry['itunes_duration'].blank? %><%#= entry.itunes_duration %><%# end %>
+              <p class="sub">
+                <% unless entry['enclosure_url'].blank? %><a href="<%= entry['enclosure_url'] %>">Listen</a>&nbsp;&bull;&nbsp;<% end %>
+                <% unless entry['url'].blank? %><a href="<%= entry.url %>">Webpage</a><% end %>
+              </p>
+              <audio src="<%= entry['enclosure_url'] %>" preload="auto" />
+            </div> <!-- end: .desc -->
+            <div class="player">
+              
+            </div> <!-- end: .player -->
+          </div> <!-- end: .episode -->
         <% end %>
 
       </div> <!-- end: .podcast_episodes -->

@@ -8,4 +8,5 @@
 $(document).ready(function(){
   $("#podcast_wrap_inner").html("<%= escape_javascript(render(:partial => 'pages/podcast')) %>");
   $(".spinner").hide();
+  $('#podcast_wrap_inner').css('opacity','1');
 });
