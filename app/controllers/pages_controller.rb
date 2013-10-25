@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @results = Podcast.search_itunes(params[:r])
+    @results = Podcast.search_itunes(params[:query])
   end
   def show
     @feedUrl = params[:url_rss]
