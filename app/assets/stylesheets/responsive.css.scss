@@ -1,5 +1,6 @@
 .side {
   width: 100%;
+  top: 0;
   left: 0;
   position: fixed;
   height: 100%;
@@ -17,7 +18,8 @@
         &:hover {
           background: #333;
         }
-        &.active {
+        &.active,
+        &:active {
           background: orange;
           color: #000;
         }
@@ -28,36 +30,47 @@
 
 .main {
   left: 100%;
-  width: 800px;
+  width: 727px;
   .show-details {
     .back-to {
-      background: #222;
+      background: #444;
       a {
         color: #fff;
         padding: 20px;
         display: block;
       }
     }
+    .details-wrap {
+      background: #eee;
+    }
   }
 }
 
 // SMALL SCREEN
-@media only screen and (max-width : 727px) {
+@media only screen and (max-width : 1027px) {
   body.show-details {
     .side {
       left: -300px;
     }
     .main {
       left: 0;
+      top: 0;
+      bottom: 0;
+      position: fixed;
+      width: 100%;
+      overflow-y: auto;
       .back-to {
         display: block;
+      }
+      .details-wrap {
+        margin: 0;
       }
     }
   }
 }
 
 // LARGE SCREEN
-@media only screen and (min-width : 728px) {
+@media only screen and (min-width : 1028px) {
   .side {
     width: 300px;
   }

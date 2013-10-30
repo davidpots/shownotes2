@@ -1,17 +1,10 @@
 .feeds {
   background: $dark-primary;
   padding: 0;
-  width: 290px;
-  position: fixed;
-  bottom: 0;
-  top: 0; 
-  left: 0;
-  overflow-y: auto;
   color: #fff;
 
   .title-box {
     padding: 32px 20px 32px;
-    width: 290px;
     position: fixed;
     z-index: 20;
     background: $dark-primary-dark;
@@ -65,7 +58,7 @@
   .footer-box {
     position: fixed;
     bottom: 0;
-    width: 290px;
+    width: 300px;
     height: 60px;
     background: $dark-primary-dark;
     color: #fff;
@@ -109,7 +102,7 @@
     }
 
     .text {
-      width: 226px;
+      width: 236px;
       display: table-cell;
       vertical-align: middle;
       padding: 0 10px;

@@ -1,0 +1,54 @@
+.side {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main {
+  left: 100%;
+  width: 727px;
+}
+
+// SMALL SCREEN
+@media only screen and (max-width: 1027px) {
+
+  // code HTML better so you don't have to do these:
+    .side .title-box { width: 100%; }
+    .feeds .feed .text { width: 100%; }
+    .feeds .title-box form input[type="text"] { width: 80%; }
+
+  body.showing-details {
+    .side {
+      left: -300px;
+    }
+    .main {
+      left: 0; top: 0; bottom: 0;
+      position: fixed;
+      width: 100%;
+      overflow-y: auto;
+      .back-to {
+        display: block;
+      }
+    }
+  }
+}
+
+// LARGE SCREEN
+@media only screen and (min-width : 1028px) {
+  .side {
+    width: 300px;
+    // code HTML better so you don't have to do this:
+    .title-box {
+      width: 300px;
+    }
+  }
+  .main { 
+    left: 300px;
+    .back-to {
+      display: none;
+    }
+  }
+}
