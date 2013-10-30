@@ -26,6 +26,25 @@ $(document).ready(function(){
     $('#podcast_wrap_inner').css('opacity','0.3');
     $('.spinner').show();
   });
+
+
+  // RESPONSIVE STUFF
+
+  $('body').click(function(){
+    $('body').addClass('show-details');
+  });
+
+  $('.back-to a').click(function(){
+    $('body').removeClass('show-details');
+    $('.side ul li a').removeClass('active');
+    return false;
+  });
+
+  $('.side ul li a').click(function(){
+    $('.side ul li a').removeClass('active');
+    $(this).addClass('active');
+  });
+
 });
 
 $(window).bind("load", function() {
