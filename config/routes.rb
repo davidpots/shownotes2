@@ -4,7 +4,8 @@ Shownotes::Application.routes.draw do
   root :to => 'pages#home'
 
   match 'show' => 'pages#show', :as => :show
-  match 'sandbox' => 'pages#sandbox', :as => :sandbox
+  match 'sandbox_podcasts' => 'pages#sandbox_podcasts', :as => :sandbox_podcasts
+  match 'sandbox_feeds' => 'pages#sandbox_feeds', :as => :sandbox_feeds
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,6 +6,7 @@
   .title-box {
     padding: 32px 20px 32px;
     position: fixed;
+    width: 100%;
     z-index: 20;
     background: $dark-primary-dark;
     border-bottom: 1px solid $dark-border-dark;
@@ -29,6 +30,8 @@
       background: $dark-border-darker;
       height: 40px;
       border-radius: 20px;
+      margin: 0 auto;
+      width: 260px;
       @include clearfix;
       input[type="text"] {
         float: left;
@@ -40,7 +43,7 @@
         padding: 0 15px;
         font:1.2em/1.2 "Source Sans Pro", Arial, sans-serif;
         outline: none;
-        width: 200px;
+        width: 80%;
       }
       input[type="submit"] {
         float: right;
@@ -51,24 +54,6 @@
         border: none;
         background: url(/assets/_icons/search-submit-passive.png) no-repeat center;
         background-size: 20px 20px;
-      }
-    }
-  }
-
-  .footer-box {
-    position: fixed;
-    bottom: 0;
-    width: 300px;
-    height: 60px;
-    background: $dark-primary-dark;
-    color: #fff;
-    z-index: 21;
-    border-top: 1px solid $dark-border-dark;
-    p {
-      text-align: center;
-      line-height: 60px;
-      a {
-        color: $color-primary;
       }
     }
   }
@@ -93,7 +78,6 @@
       border-top: 1px solid $dark-border-dark;
     }
 
-
     .thumbnail {
       display: table-cell;
       height: 40px;
@@ -102,7 +86,7 @@
     }
 
     .text {
-      width: 236px;
+      width: 100%;
       display: table-cell;
       vertical-align: middle;
       padding: 0 10px;
@@ -147,4 +131,14 @@
 
 .feeds .feed:active .text h3 {
     top: 1px;
+}
+
+//LARGE SCREEN
+@media only screen and (min-width : 1000px) {
+  .feeds .title-box {
+    width: 300px;
+  }
+  .feeds .footer-box {
+    width: 300px;
+  }
 }
