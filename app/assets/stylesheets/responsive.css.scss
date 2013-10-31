@@ -1,83 +1,52 @@
-.side {
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  background: #444;
-  ul {
-    margin: 0; padding: 0;
-    li {
-      list-style: none; margin: 0; padding: 0;
-      a {
-        display: block;
-        padding: 20px;
-        color: #fff;
-        border-bottom: 1px solid #666;
-        &:hover {
-          background: #333;
-        }
-        &.active,
-        &:active {
-          background: orange;
-          color: #000;
-        }
-      }
-    }
-  }
-}
+// APPEARANCE
 
-.main {
-  left: 100%;
-  width: 727px;
-  .show-details {
-    .back-to {
-      background: #444;
-      a {
-        color: #fff;
-        padding: 20px;
-        display: block;
-      }
-    }
-    .details-wrap {
-      background: #eee;
-    }
-  }
-}
+.back-to a { padding: 0 $sidePadding; background: #333; line-height: 54px; display: block; color: #ddd; font-size: 16px; }
+
+.pc-info { padding: $sidePadding; background: #fff; }
+.pc-info .thumb { position: absolute; left: $sidePadding; top: 15px; }
+.pc-info .thumb img { width: 60px; height: 60px; border-radius: $radius; }
+
+.pc-info h1 { margin: 0 0 6px 0; font-size: 24px; line-height: 27px; color: #333; }
+.pc-info p { margin: 0 0 12px 0; }
+.pc-info ul.actions { @include clearfix; }
+.pc-info ul.actions > li { list-style: none; float: left; margin: 0 10px 0 0; }
+.pc-info ul.actions > li a { display: block; padding: 0 10px; font-size: 14px; line-height: 28px; background: blue; color: #fff; }
+
+.pc-info h1,
+.pc-info p.desc,
+.pc-info ul.actions { margin-left: 73px; }
+
+.ep-box { width: 100%; }
+.ep-box { background: #eaeaea; }
+.ep-box h4 { padding: 0 $sidePadding; background: #777; color: #fff; font-size: 15px; font-weight: 400; line-height: 32px; }
+.ep-box ul.eps .ep { padding: 15px $sidePadding 18px; list-style: none; border-top: 1px solid #bbb; }
+.ep-box ul.eps .ep:first-child { border-top: none; }
+.ep-box .ep .datetime { font-size: 13px; color: #999; margin: 0 0 3px 0; }
+.ep-box .ep .datetime .time { display: none; }
+.ep-box .ep .desc h3 { margin: 0 0 6px 0; color: #444; }
+.ep-box .ep .desc p { margin: 0 0 12px 0; }
+.ep-box ul.actions { @include clearfix; }
+.ep-box ul.actions > li { list-style: none; float: left; margin: 0 10px 0 0; }
+.ep-box ul.actions > li a { display: block; padding: 0 10px; font-size: 14px; line-height: 28px; background: #fff; color: blue; border: 1px solid blue; }
 
 // SMALL SCREEN
-@media only screen and (max-width : 1027px) {
-  body.show-details {
-    .side {
-      left: -300px;
-    }
-    .main {
-      left: 0;
-      top: 0;
-      bottom: 0;
-      position: fixed;
-      width: 100%;
-      overflow-y: auto;
-      .back-to {
-        display: block;
-      }
-      .details-wrap {
-        margin: 0;
-      }
-    }
-  }
+@media only screen and (max-width: 727px) {
 }
 
 // LARGE SCREEN
-@media only screen and (min-width : 1028px) {
-  .side {
-    width: 300px;
-  }
-  .main { 
-    left: 300px;
-      .back-to {
-        display: none;
-      }
-  }
+@media only screen and (min-width: 728px) {
+  body { background: #fff; }
+  .details-bg { padding: 20px; width: 800px; }
+  .pc-info { padding: 0 0 20px 0; }
+  .pc-info .thumb { left: 0; top: 0; }
+  .pc-info .thumb img { width: 120px; height: 120px; }
+  .pc-info h1,
+  .pc-info p.desc,
+  .pc-info ul.actions { margin-left: 135px; }
+  .back-to { display: none; }
+  .ep-box { margin: 0 0 20px 0; }
+  .ep-box .ep .datetime { position: absolute; left: $sidePadding; }
+  .ep-box .ep .datetime .date { display: block; }
+  .ep-box .ep .datetime .time { display: block; }
+  .ep-box .ep .desc { margin-left: 120px; }
 }
