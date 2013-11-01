@@ -11,9 +11,10 @@
     }
 }
 
+html,body { height: 100%; }
 body { 
-  font-family: "Source Sans Pro", "Helvetica Neue";
-  background: #fff;
+  font-family: "Open Sans", "Helvetica Neue";
+  background: $colorClouds;
   font-size: 15px;
   line-height: 20px;
   color: #4f4f4f;

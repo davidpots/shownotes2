@@ -8,22 +8,18 @@
       overflow-y: auto;
       z-index: 1; 
     }
-
-    .main {
-      left: 0; top: 0; bottom: 0;
-      position: fixed;
-      width: 100%;
-      overflow-y: auto;
+    .main { 
+      min-height: 100%;
     }
+
     body.showing-details .main {
-      z-index: 2;
-      background: $grey;
+      background: $colorClouds;
+      z-index: 1;
     }
 
 // LARGE SCREEN
 
-    @media only screen and (min-width : 1000px) {
+    @media only screen and (min-width: 1000px) {
       .side { width: 300px; }
-      .main { left: 300px;  }
-      body.showing-details .main { background: #fff; }
+      .main { margin-left: 300px; }
     }

@@ -1,26 +1,29 @@
-<div class="details-bg">
+<div class="back-to">
+  <p><a href="#">&larr; back to search results</a></p>
+</div>
 
-  <div class="back-to">
-    <p><a href="#">&larr; back to search results</a></p>
-  </div>
+<div class="pod-wrap">
 
   <% unless @podcast.blank? %>
 
-  <div class="pc-info">
+  <div class="pod-title">
     <p class="thumb">
       <img src="<%= @podcast.itunes_image %>" />
     </p>
     <h1><%= @podcast.title %></h1>
+  </div> <!-- end: .pod-title -->
+
+  <div class="pod-info">
+    <h4>Podcast Info</h4>
     <p class="desc"><%= @podcast.description %></p>
     <ul class="actions">
       <li><a href="<%= @url_itunes %>">iTunes</a></li>
       <li><a href="<%= @feedUrl %>">RSS</a></li>
       <li><a href="<%= @podcast.url %>">Podcast Website</a></li>
     </ul>
-  </div> <!-- end: .pc-info -->
+  </div> <!-- end: .pod-info -->
 
   <div class="ep-box">
-    <h4>Most Recent Episode</h4>
     <ul class="eps">
       <% @podcast.entries.each do |entry| %>
       <li class="ep">
@@ -50,4 +53,4 @@
   
   <% end # unless @podcast.blank? %>
 
-</div> <!-- end: .details-bg -->
+</div> <!-- end: .pod-wrap -->
