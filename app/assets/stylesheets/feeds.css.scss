@@ -5,7 +5,6 @@
 
   .title-box {
     padding: 32px 20px 32px;
-    position: fixed;
     width: 100%;
     z-index: 20;
     background: $colorMidnightBlue;
@@ -58,7 +57,6 @@
   }
 
   .feeds-wrap-inner {
-    top: 222px;
     opacity: 0;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -135,7 +133,11 @@
 @media only screen and (min-width: 800px) {
   .feeds .title-box {
     width: 300px;
+    position: fixed;    
   }
+  .feeds-wrap-inner {
+    top: 222px;
+  }  
   .feeds .footer-box {
     width: 300px;
   }
