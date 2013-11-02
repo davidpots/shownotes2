@@ -24,29 +24,28 @@
   </div> <!-- end: .pod-info -->
 
   <div class="ep-box">
+    <h4>Latest Episode</h4>
     <ul class="eps">
-      <% @podcast.entries.each do |entry| %>
-      <li class="ep">
-        <div class="datetime">
-          <span class="date"><%= entry.published.strftime("%b %e, %Y") %></span>
-          <span class="time"><%= entry.published.strftime("%l:%M %p") %></span>
-        </div> <!-- end: .date -->
-        <div class="desc">
+      <% @podcast.entries[1..-1].each_with_index do |entry,i| %>
+      <li class="epb">
+        <%= link_to(entry['enclosure_url']) do %>
+          <p class="datetime">
+            <span class="date"><%= entry.published.strftime("%b %e, %Y") %></span>
+            <span class="time"><%= entry.published.strftime("%l:%M %p") %></span>
+          </p> <!-- end: .datetime -->
           <h3><%= entry.title %></h3>
-          <% unless entry['itunes_subtitle'].blank? %><p><%= entry.itunes_subtitle %></p><% end %>
-          <ul class="actions">
-            <% unless entry['enclosure_url'].blank? %>
-              <li><a href="<%= entry['enclosure_url'] %>">Listen</a></li>
-            <% end %>
-            <% unless entry['url'].blank? %>
-              <li><a href="<%= entry.url %>">Episode Webpage</a></li>
-            <% end %>
-          </ul>
-        </div> <!-- end: .desc -->
-        <div class="player">
-          
-        </div> <!-- end: .player -->
-      </li> <!-- end: .ep -->
+          <p class="play"><span></span></p>
+        <% end %>
+        <% unless entry['itunes_subtitle'].blank? %><p class="desc"><%= entry.itunes_subtitle %></p><% end %>
+        <ul class="sub">
+          <% unless entry['itunes_duration'].blank? %>
+            <li class="l"><%= entry.itunes_duration %></li>
+          <% end %>
+          <% unless entry['url'].blank? %>
+            <li class="r"><a href="<%= entry.url %>">View on Web</a></li>
+          <% end %>
+        </ul>
+      </li>
       <% end %>
     </ul> <!-- end: .eps -->
   </div> <!-- end: .ep-box -->

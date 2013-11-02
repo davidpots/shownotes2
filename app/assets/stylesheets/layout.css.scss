@@ -13,13 +13,13 @@
     }
 
     body.showing-details .main {
-      background: $colorClouds;
+      background: #fff;
       z-index: 1;
     }
 
 // LARGE SCREEN
 
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: 800px) {
       .side { width: 300px; }
       .main { margin-left: 300px; }
     }

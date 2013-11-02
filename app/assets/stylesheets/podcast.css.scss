@@ -26,51 +26,41 @@
         .back-to a { padding: 0 $sidePadding; line-height: 54px; display: block; font-weight: 300; color: rgba(255,255,255,0.6); font-size: 14px; }
         .back-to a:active { top: 1px; }
 
-        .pod-wrap { padding: 20px; }
+        .pod-wrap { padding: 20px; max-width: 640px; margin: 0 auto;
 
-        .pod-title { min-height: 80px; display: table; margin: 0 0 16px 0; padding: 0 0 16px 0; border-bottom: 1px solid $colorSilver; }
-        .pod-title .thumb { display: table-cell; width: 80px; height: 80px; }
-        .pod-title .thumb img { width: 80px; height: 80px; border-radius: $radius; }
-        .pod-title h1 { display: table-cell; width: 100%; padding: 0 0 0 14px; vertical-align: middle; font-size: 24px; line-height: 27px; color: #333; font-weight: 400; }
+          .pod-title { min-height: 80px; display: table; margin: 0 0 16px 0; padding: 0 0 16px 0; border-bottom: 1px solid $colorSilver;
+            .thumb { display: table-cell; width: 80px; height: 80px; }
+            .thumb img { width: 80px; height: 80px; border-radius: $radius; }
+            h1 { display: table-cell; width: 100%; padding: 0 0 0 14px; vertical-align: middle; font-size: 24px; line-height: 27px; color: #333; font-weight: 400; }
+          }
+          
+          p { margin: 0 0 8px 0; }
+          h4 { color: $colorConcrete; font-weight: 400; text-transform: uppercase; font-size: 14px; line-height: 15px; margin: 0 0 8px 0; }
+          .pod-info { margin: 0 0 32px 0; }
+          .pod-info .actions { @include clearfix; margin: 0 0 10px 0; }
+          .pod-info .actions li { list-style: none; float: left; margin: 0 7px 0 0; }
+          .pod-info .actions li a { display: block; padding: 0 9px; line-height: 32px; background: $colorAlizarin; color: #fff; font-weight: 300; border-radius: $radius; font-size: 14px; }
+
+        }
         
-        .pod-wrap h4 { color: $colorConcrete; font-weight: 400; text-transform: uppercase; font-size: 14px; line-height: 15px; margin: 0 0 8px 0; }
-        // .pod-info p { margin: 0 0 12px 0; }
-        // .pod-info ul.actions { @include clearfix; }
-        // .pod-info ul.actions > li { list-style: none; float: left; margin: 0 10px 0 0; }
-        // .pod-info ul.actions > li a { display: block; padding: 0 10px; font-size: 14px; line-height: 28px; background: blue; color: #fff; }
+        .ep-box .epb { list-style: none; background: $colorClouds; border-radius: $radius; overflow: hidden; margin: 0 0 20px 0; }
+        .ep-box .epb > a { display: block; background: $colorNiceBlue; color: #fff; padding: 13px $sidePadding 11px; }
+        .ep-box .epb > a .datetime { opacity: 0.6; font-weight: 300; font-size: 12px; line-height: 12px; margin: 0 0 5px 0; }
+        .ep-box .epb > a .datetime .time { display: none; }
+        .ep-box .epb > a h3 { font-weight: 300; font-size: 24px; line-height: 27px; padding-right: 50px; }
+        .ep-box .epb > a .play { position: absolute; right: 19px; top: 50%; margin-top: -19px; background: $colorWetAsphalt; width: 38px; height: 38px; border-radius: 19px; }
+        .ep-box .epb > a .play span { display: block; margin: 7px 0 0 14px; width: 24px; height: 24px; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 12px solid #fff; 
+                                      transform: scaleY(.5);
+                                      -ms-transform: scaleY(.5);
+                                      -webkit-transform: scaleY(.5); }
+        .ep-box .epb .desc { padding: 12px $sidePadding 10px; margin: 0; border-bottom: 1px solid $colorHalfSilver; }
+        .ep-box .epb .sub { @include clearfix; padding: 12px $sidePadding 10px; }
+        .ep-box .epb .sub > li { list-style: none; float: left; font-size: 13px; color: $colorConcrete }
+        .ep-box .epb .sub > li a { color: $colorNiceBlue; }
+        .ep-box .epb .sub > li.r { float: right; }
 
-        // .ep-box { width: 100%; }
-        // .ep-box { background: $grey; }
-        // .ep-box h4 { padding: 0 $sidePadding; background: #777; color: #fff; font-size: 15px; font-weight: 400; line-height: 32px; }
-        // .ep-box ul.eps .ep { padding: 15px $sidePadding 18px; list-style: none; border-top: 1px solid #bbb; }
-        // .ep-box ul.eps .ep:first-child { border-top: none; }
-        // .ep-box .ep .datetime { font-size: 13px; color: #999; margin: 0 0 3px 0; }
-        // .ep-box .ep .datetime .time { display: none; }
-        // .ep-box .ep .desc h3 { margin: 0 0 6px 0; color: #444; }
-        // .ep-box .ep .desc p { margin: 0 0 12px 0; }
-        // .ep-box ul.actions { @include clearfix; }
-        // .ep-box ul.actions > li { list-style: none; float: left; margin: 0 10px 0 0; }
-        // .ep-box ul.actions > li a { display: block; padding: 0 10px; font-size: 14px; line-height: 28px; background: #fff; color: blue; border: 1px solid blue; }
-
-    // SMALL SCREEN
-    @media only screen and (max-width: 999px) {
-      // this is unnecessary, since everything above is defacto mobile
-    }
 
     // LARGE SCREEN
-    @media only screen and (min-width: 1000px) {
-      // body { background: #fff; }
-      // .details-bg { padding: 20px; width: 700px; }
+    @media only screen and (min-width: 800px) {
       .back-to { display: none; }
-      // .pod-info { padding: 0 0 20px 0; min-height: 140px; }
-      // .pod-info .thumb { left: 0; top: 0; }
-      // .pod-info .thumb img { width: 120px; height: 120px; }
-      // .pod-info h1,
-      // .pod-info p.desc,
-      // .pod-info ul.actions { margin-left: 135px; }
-      // .ep-box { margin: 0 0 20px 0; }
-      // .ep-box .ep .datetime { position: absolute; left: $sidePadding; }
-      // .ep-box .ep .datetime .date { display: block; }
-      // .ep-box .ep .datetime .time { display: block; }
-      // .ep-box .ep .desc { margin-left: 120px; }
     }

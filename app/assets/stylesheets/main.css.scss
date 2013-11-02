@@ -14,7 +14,7 @@
 html,body { height: 100%; }
 body { 
   font-family: "Open Sans", "Helvetica Neue";
-  background: $colorClouds;
+  background: #fff;
   font-size: 15px;
   line-height: 20px;
   color: #4f4f4f;
@@ -25,7 +25,3 @@ a {
   color: #006FAD;
 }
 
-@import "buttons";
-@import "layout";
-@import "feeds";
-@import "podcast";
