@@ -26,26 +26,15 @@
   <div class="ep-box">
     <h4>Latest Episode</h4>
     <ul class="eps">
+      <% @podcast.entries[0..0].each_with_index do |entry,i| %>
+        <%= render :partial => 'pages/episode', :locals => { :entry => entry } %>
+      <% end %>
+    </ul> <!-- end: .eps -->
+
+    <h4>Past Episodes</h4>
+    <ul class="eps">
       <% @podcast.entries[1..-1].each_with_index do |entry,i| %>
-      <li class="epb">
-        <%= link_to(entry['enclosure_url']) do %>
-          <p class="datetime">
-            <span class="date"><%= entry.published.strftime("%b %e, %Y") %></span>
-            <span class="time"><%= entry.published.strftime("%l:%M %p") %></span>
-          </p> <!-- end: .datetime -->
-          <h3><%= entry.title %></h3>
-          <p class="play"><span></span></p>
-        <% end %>
-        <% unless entry['itunes_subtitle'].blank? %><p class="desc"><%= entry.itunes_subtitle %></p><% end %>
-        <ul class="sub">
-          <% unless entry['itunes_duration'].blank? %>
-            <li class="l"><%= entry.itunes_duration %></li>
-          <% end %>
-          <% unless entry['url'].blank? %>
-            <li class="r"><a href="<%= entry.url %>">View on Web</a></li>
-          <% end %>
-        </ul>
-      </li>
+        <%= render :partial => 'pages/episode', :locals => { :entry => entry } %>
       <% end %>
     </ul> <!-- end: .eps -->
   </div> <!-- end: .ep-box -->

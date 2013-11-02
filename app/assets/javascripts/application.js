@@ -30,10 +30,10 @@
 
           function responsive_resize(){
             var current_width = $(window).width();
-            if(current_width < 1027){
+            if(current_width < 800){
               $('html').addClass("mobile").removeClass("desktop");
             } 
-            if(current_width > 1027){
+            if(current_width > 800){
               $('html').addClass("desktop").removeClass("mobile");
             }
           }

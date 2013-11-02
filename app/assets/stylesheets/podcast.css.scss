@@ -7,14 +7,15 @@
     top: 200px;
     bottom: 200px;
     width: auto;
-    height: 300px;
+    height: 100px;
     background: #fff;
     border-radius: 6px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
     text-align: center;
-    line-height: 300px;
+    padding-top: 38px;
+    line-height: 24px;
     z-index: 10; 
-    color: #777;
+    color: $colorConcrete;
   }
 }
 
@@ -35,7 +36,7 @@
           }
           
           p { margin: 0 0 8px 0; }
-          h4 { color: $colorConcrete; font-weight: 400; text-transform: uppercase; font-size: 14px; line-height: 15px; margin: 0 0 8px 0; }
+          h4 { color: $colorConcrete; font-weight: 300; text-transform: uppercase; font-size: 13px; line-height: 15px; margin: 0 0 9px 0; }
           .pod-info { margin: 0 0 32px 0; }
           .pod-info .actions { @include clearfix; margin: 0 0 10px 0; }
           .pod-info .actions li { list-style: none; float: left; margin: 0 7px 0 0; }
@@ -43,6 +44,7 @@
 
         }
         
+        .ep-box .eps { margin: 14px 0 40px; }
         .ep-box .epb { list-style: none; background: $colorClouds; border-radius: $radius; overflow: hidden; margin: 0 0 20px 0; }
         .ep-box .epb > a { display: block; background: $colorNiceBlue; color: #fff; padding: 13px $sidePadding 11px; }
         .ep-box .epb > a .datetime { opacity: 0.6; font-weight: 300; font-size: 12px; line-height: 12px; margin: 0 0 5px 0; }
