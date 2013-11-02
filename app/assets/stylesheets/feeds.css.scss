@@ -107,28 +107,6 @@
 
 }
 
-.feeds .feed:hover {
-  background-color: rgba(31,37,42,0.27);
-  transition: background-color 0.1s ease-in-out;
-}
-
-.feeds .feed.active {
-  background-color: $colorAlizarin; 
-  transition: background-color 0.1s ease-in-out;
-  .text {
-    background-image: url(/assets/_icons/feed-carrot-active.png);
-    transition: background-image 0.1s ease-in-out;
-    h3 {
-      color: #fff;
-      transition: color 0.1s ease-in-out;
-    }
-  }
-}
-
-.feeds .feed:active .text h3 {
-    top: 1px;
-}
-
 //LARGE SCREEN
 @media only screen and (min-width: 800px) {
   .feeds .title-box {
@@ -141,4 +119,28 @@
   .feeds .footer-box {
     width: 300px;
   }
+
+  .feeds .feed:hover {
+    background-color: rgba(31,37,42,0.27);
+    transition: background-color 0.1s ease-in-out;
+  }
+
+  .feeds .feed.active {
+    background-color: $colorAlizarin; 
+    transition: background-color 0.1s ease-in-out;
+    .text {
+      background-image: url(/assets/_icons/feed-carrot-active.png);
+      transition: background-image 0.1s ease-in-out;
+      h3 {
+        color: #fff;
+        transition: color 0.1s ease-in-out;
+      }
+    }
+  }
+
+  .feeds .feed:active .text h3 {
+    top: 1px;
+  }
+
+
 }
