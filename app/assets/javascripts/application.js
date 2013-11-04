@@ -80,6 +80,10 @@ $(document).ready(function(){
 
   // If in mobile view, user clicks BACK TO PODCASTS link...
   $('body').on('click', '.back-to a', function(){
+
+    // remove the URL hash. via hacky tweak of http://stackoverflow.com/questions/2295845/how-can-i-remove-the-location-hash-without-causing-the-page-to-scroll
+    window.location.hash = "";
+
     $('a.feed').removeClass('active');
     $('body').removeClass('showing-details');
     $('#podcast_wrap_inner').empty();
@@ -88,11 +92,55 @@ $(document).ready(function(){
 
 });
 
-$(window).bind("load", function() {
-  // If a desktop view, then auto-click the first search result
-  if ($('html').hasClass('desktop')) {
-    $('.feeds a.feed').first().click();
-  }
-  $('.feeds-wrap-inner').css('opacity','1');
 
-});
+
+
+// If a desktop view, then auto-click the first search result after entire page *finishes* loading
+
+        $(window).bind("load", function() {
+          if ($('html').hasClass('desktop')) {
+            $('.feeds a.feed').first().click();
+          }
+          $('.feeds-wrap-inner').css('opacity','1');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+// Detects BACK BUTTON push -- and removes hash value. via https://gist.github.com/sstephenson/739659
+
+      var detectBackOrForward = function(onBack, onForward) {
+        hashHistory = [window.location.hash];
+        historyLength = window.history.length;
+       
+        return function() {
+          var hash = window.location.hash, length = window.history.length;
+          if (hashHistory.length && historyLength == length) {
+            if (hashHistory[hashHistory.length - 2] == hash) {
+              hashHistory = hashHistory.slice(0, -1);
+              onBack();
+            } else {
+              hashHistory.push(hash);
+              onForward();
+            }
+          } else {
+            hashHistory.push(hash);
+            historyLength = length;
+          }
+        }
+      };
+
+      window.addEventListener("hashchange", detectBackOrForward(
+        function() { /* user went BACK: remove hash */ 
+          $('body').removeClass('showing-details');
+        },
+        function() { /* user went FORWARD: do nothing */ }
+      ));

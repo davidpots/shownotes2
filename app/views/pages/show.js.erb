@@ -7,6 +7,7 @@
 
 $(document).ready(function(){
   $("#podcast_wrap_inner").html("<%= escape_javascript(render(:partial => 'pages/podcast')) %>");
+  window.location.hash = "url=<%= @url_itunes %>";
   $(".spinner").hide();
   $('#podcast_wrap_inner').css('opacity','1');
 
