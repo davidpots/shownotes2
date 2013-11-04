@@ -11,12 +11,12 @@
 
   <div class="feeds-wrap-inner">
     <% @results.each do |result| %>
-    <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">
-      <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
-      <div class="text">
-        <h3><%= result['collectionName'] %></h3>
-      </div>
-    </a>
+      <%= link_to('#dogtown', :data => { :'url-rss' => result['feedUrl'], :'url-itunes' => result['trackViewUrl']}, :class => "feed") do %>
+        <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
+        <div class="text">
+          <h3><%= result['collectionName'] %></h3>
+        </div>
+      <% end %>
     <% end %>
   </div> <!-- // .feeds-wrap-inner -->
 

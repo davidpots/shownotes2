@@ -44,6 +44,25 @@
 
 
 
+function clickFeedLink(item)
+{
+    $('a.feed').removeClass('active');
+    $('body').addClass('showing-details');
+    item.addClass('active');
+    var url_rss = item.data('url-rss');
+    var url_itunes = item.data('url-itunes');
+    $('#feed_select').find('#url_rss').val(url_rss);
+    $('#feed_select').find('#url_itunes').val(url_itunes);
+
+    if ($('html').hasClass('mobile')) {
+      $('#podcast_wrap_inner').css('opacity','0.0');
+    } else {
+      $('#podcast_wrap_inner').css('opacity','0.3');
+    }
+
+    $('#feed_select').submit();
+    $('.spinner').show();
+}
 
 
 
@@ -57,24 +76,8 @@ $(document).ready(function(){
   }  
 
   // If user clicks on a search result...
-  $('body').on('click', 'a.feed', function(){
-    $('a.feed').removeClass('active');
-    $('body').addClass('showing-details');
-    $(this).addClass('active');
-    var url_rss = $(this).data('url-rss');
-    var url_itunes = $(this).data('url-itunes');
-    $('#feed_select').find('#url_rss').val(url_rss);
-    $('#feed_select').find('#url_itunes').val(url_itunes);
-
-    if ($('html').hasClass('mobile')) {
-      $('#podcast_wrap_inner').css('opacity','0.0');
-    } else {
-      $('#podcast_wrap_inner').css('opacity','0.3');
-    }
-
-    $('#feed_select').submit();
-    $('.spinner').show();
-    return false;
+  $('body').on('click', 'a.feed', function(event){
+    clickFeedLink($(this));
   });
 
 
@@ -91,7 +94,9 @@ $(document).ready(function(){
 $(window).bind("load", function() {
   // If a desktop view, then auto-click the first search result
   if ($('html').hasClass('desktop')) {
-    $('.feeds a.feed').first().click();
+    if ( $('.feeds a.feed').length > 0 ) {
+      clickFeedLink($('.feeds a.feed').first().click());      
+    }
   }
   $('.feeds-wrap-inner').css('opacity','1');
 
