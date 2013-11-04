@@ -82,6 +82,7 @@ $(document).ready(function(){
   $('body').on('click', '.back-to a', function(){
     $('a.feed').removeClass('active');
     $('body').removeClass('showing-details');
+    $('#podcast_wrap_inner').empty();
     return false;
   });
 
