@@ -44,23 +44,23 @@
 
         }
         
-        .ep-box .eps { margin: 14px 0 40px; }
-        .ep-box .epb { list-style: none; background: $colorClouds; border-radius: $radius; overflow: hidden; margin: 0 0 20px 0; }
-        .ep-box .epb > a { display: block; background: $colorNiceBlue; color: #fff; padding: 13px $sidePadding 11px; }
-        .ep-box .epb > a .datetime { opacity: 0.6; font-weight: 300; font-size: 12px; line-height: 12px; margin: 0 0 5px 0; }
-        .ep-box .epb > a .datetime .time { display: none; }
-        .ep-box .epb > a h3 { font-weight: 300; font-size: 24px; line-height: 27px; padding-right: 50px; }
-        .ep-box .epb > a .play { position: absolute; right: 19px; top: 50%; margin-top: -19px; background: $colorWetAsphalt; width: 38px; height: 38px; border-radius: 19px; }
-        .ep-box .epb > a .play span { display: block; margin: 7px 0 0 14px; width: 24px; height: 24px; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 12px solid #fff; 
-                                      transform: scaleY(.5);
-                                      -ms-transform: scaleY(.5);
-                                      -webkit-transform: scaleY(.5); }
-        .ep-box .epb .desc { padding: 12px $sidePadding 10px; margin: 0; border-bottom: 1px solid $colorHalfSilver; }
-        .ep-box .epb .sub { @include clearfix; padding: 12px $sidePadding 10px; }
-        .ep-box .epb .sub > li { list-style: none; float: left; font-size: 13px; color: $colorConcrete }
-        .ep-box .epb .sub > li a { color: $colorNiceBlue; }
-        .ep-box .epb .sub > li.r { float: right; }
-
+        .ep-box .eps { margin: 14px 0 40px;
+          .ep { list-style: none; background: $colorClouds; border-radius: $radius; overflow: hidden; margin: 0 0 20px 0; }
+          .ep > a { display: block; background: $colorNiceBlue; color: #fff; padding: 13px $sidePadding 11px; }
+          .ep > a .datetime { opacity: 0.6; font-weight: 300; font-size: 12px; line-height: 12px; margin: 0 0 5px 0; }
+          .ep > a .datetime .time { display: none; }
+          .ep > a h3 { font-weight: 300; font-size: 24px; line-height: 27px; padding-right: 57px; }
+          .ep > a .play { position: absolute; top: 50%; right: 18px; margin-top: -18px; background: $colorWetAsphalt; width: 36px; height: 36px; border-radius: 18px; }
+          .ep > a .play span { display: block; margin: 7px 0 0 14px; width: 22px; height: 22px; border-top: 11px solid transparent; border-bottom: 11px solid transparent; border-left: 11px solid #fff; 
+                                transform: scaleY(.5);
+                                -ms-transform: scaleY(.5);
+                                -webkit-transform: scaleY(.5); }
+          .ep .desc { padding: 12px $sidePadding 10px; margin: 0; border-bottom: 1px solid $colorHalfSilver; }
+          .ep .sub { @include clearfix; padding: 12px $sidePadding 10px; }
+          .ep .sub > li { list-style: none; float: left; font-size: 13px; color: $colorConcrete }
+          .ep .sub > li a { color: $colorNiceBlue; }
+          .ep .sub > li.r { float: right; }
+        }
 
     // LARGE SCREEN
     @media only screen and (min-width: 800px) {
