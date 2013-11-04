@@ -141,6 +141,7 @@ $(document).ready(function(){
       window.addEventListener("hashchange", detectBackOrForward(
         function() { /* user went BACK: remove hash */ 
           $('body').removeClass('showing-details');
+          $('#podcast_wrap_inner').empty();
         },
         function() { /* user went FORWARD: do nothing */ }
       ));
