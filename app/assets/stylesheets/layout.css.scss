@@ -6,20 +6,28 @@
       width: 100%;
       height: 100%;
       overflow-y: scroll;
-      z-index: 1; 
+      z-index: 2; 
     }
     .main { 
       min-height: 100%;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      overflow-y: scroll;
     }
 
+    .desktop .side {
+      z-index: 4;
+    }
     body.showing-details .main {
       background: #fff;
-      z-index: 1;
+      z-index: 3;
     }
 
 // LARGE SCREEN
 
     @media only screen and (min-width: 800px) {
       .side { width: 300px; }
-      .main { margin-left: 300px; }
+      .main { padding-left: 300px; }
     }
