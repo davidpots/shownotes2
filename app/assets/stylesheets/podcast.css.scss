@@ -27,7 +27,7 @@
         .back-to a { padding: 0 $sidePadding; line-height: 54px; display: block; font-weight: 300; color: rgba(255,255,255,0.6); font-size: 14px; }
         .back-to a:active { top: 1px; }
 
-        .pod-wrap { padding: 20px; max-width: 640px; margin: 0 auto;
+        .pod-wrap { padding: 12px; max-width: 640px; margin: 0 auto;
 
           .pod-title { min-height: 80px; display: table; margin: 0 0 16px 0; padding: 0 0 16px 0; border-bottom: 1px solid $colorSilver;
             .thumb { display: table-cell; width: 80px; height: 80px; }
@@ -65,4 +65,5 @@
     // LARGE SCREEN
     @media only screen and (min-width: 800px) {
       .back-to { display: none; }
+      .pod-wrap { padding: 24px; }
     }
