@@ -15,8 +15,8 @@ _icons/search-submit-passive.png: _icons/search-submit-passive-294b460593918eb6d
 _icons/search-submit-passive/index.png: _icons/search-submit-passive-294b460593918eb6d0218b62df59831e.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-d2a8c3aa3d18ab7996cb6e8f1e3503e3.js
-application/index.js: application-d2a8c3aa3d18ab7996cb6e8f1e3503e3.js
+application.js: application-5daff33b580c8f74d6663cfdbba1153e.js
+application/index.js: application-5daff33b580c8f74d6663cfdbba1153e.js
 application.css: application-a70affdac3b43e6d02d146bf68b47794.css
 application/index.css: application-a70affdac3b43e6d02d146bf68b47794.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
