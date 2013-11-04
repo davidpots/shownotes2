@@ -48,14 +48,14 @@
 
 
 
+
 $(document).ready(function(){
 
   // If search field is empty, autofocus on it on page load
   if ( $('#query').val().length == 0 ) {
     $('#query').focus();
-  }
+  }  
 
-  
   // If user clicks on a search result...
   $('body').on('click', 'a.feed', function(){
     $('a.feed').removeClass('active');
@@ -93,4 +93,5 @@ $(window).bind("load", function() {
     $('.feeds a.feed').first().click();
   }
   $('.feeds-wrap-inner').css('opacity','1');
+
 });

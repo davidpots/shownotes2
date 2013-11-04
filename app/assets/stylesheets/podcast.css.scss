@@ -31,7 +31,17 @@
 
           .pod-title { min-height: 80px; display: table; margin: 0 0 16px 0; padding: 0 0 16px 0; border-bottom: 1px solid $colorSilver;
             .thumb { display: table-cell; width: 80px; height: 80px; }
-            .thumb img { width: 80px; height: 80px; border-radius: $radius; }
+            .thumb img { width: 80px; height: 80px; border-radius: $radius; background-color: $colorClouds; }
+            .thumb img.error {
+              display: block;
+              position: relative;
+              border: 1px solid $colorHalfSilver;
+              background: $colorClouds url(/assets/_icons/feed-bg-default.png) center no-repeat;
+              background-size: 24px 32px;
+              height: 80px;
+              width: 80px;
+              content: "";
+            }
             h1 { display: table-cell; width: 100%; padding: 0 0 0 14px; vertical-align: middle; font-size: 24px; line-height: 27px; color: #333; font-weight: 400; }
           }
           
