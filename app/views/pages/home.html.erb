@@ -4,7 +4,7 @@
     <h1>PodGnostic</h1>
     <p> The easiest way to search the <br />iTunes Podcast directory.</p>
     <form method="get" action="/">
-      <%= text_field_tag(:query, params[:query], :autofocus => true) %>
+      <%= text_field_tag(:query, params[:query]) %>
       <%= submit_tag("", :id => "results-submit", :name => nil) %>
     </form>
   </div> <!-- // .title-box -->

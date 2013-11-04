@@ -17,6 +17,7 @@
 
 
 // Add/remove a class based on size of window. Inspired by https://gist.github.com/RyanBrackett/6107983
+// This is used so I can know if a mobile device vs. a desktop device.
 
           // Change width value on page load
           $(document).ready(function(){
@@ -48,6 +49,12 @@
 
 
 $(document).ready(function(){
+
+  // If search field is empty, autofocus on it on page load
+  if ( $('#query').val().length == 0 ) {
+    $('#query').focus();
+  }
+
   
   // If user clicks on a search result...
   $('body').on('click', 'a.feed', function(){
