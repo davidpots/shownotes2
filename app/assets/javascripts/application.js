@@ -16,6 +16,8 @@
 
 
 
+
+
 // Add/remove a class based on size of window. Inspired by https://gist.github.com/RyanBrackett/6107983
 // This is used so I can know if a mobile device vs. a desktop device.
 
@@ -110,6 +112,13 @@ $(document).ready(function(){
 
 // Detects BACK BUTTON push -- and removes hash value. via https://gist.github.com/sstephenson/739659
 
+      // Minor hack. When a user goes from podcast A to B to A, the large code chunk below equates 
+      // that with the user going "back". To work around this, I add an incremental, harmless "key"
+      // paramater to each URL (on podcast click) that ensures each podcast visited is unique, via
+      // this key in the URL. This is added to the URL on show.js.erb.
+      var i = 0;
+
+      // Commence the code I found via gist.github.com link above...
       var detectBackOrForward = function(onBack, onForward) {
         hashHistory = [window.location.hash];
         historyLength = window.history.length;
