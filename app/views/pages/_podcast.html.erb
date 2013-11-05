@@ -14,14 +14,20 @@
   </div> <!-- end: .pod-title -->
 
   <div class="pod-info">
-    <h4>Podcast Info</h4>
-    <p class="desc"><%= @podcast.description %></p>
+    <h4>Podcast Links</h4>    
     <ul class="actions">
       <li><a href="<%= @url_itunes %>">iTunes</a></li>
       <li><a href="<%= @feedUrl %>">RSS</a></li>
       <li><a href="<%= @podcast.url %>">Podcast Website</a></li>
     </ul>
   </div> <!-- end: .pod-info -->
+
+  <% unless @podcast.description.blank? %>
+  <div class="pod-info">
+    <h4>Podcast Description</h4>
+    <p class="desc"><%= @podcast.description %></p>
+  </div> <!-- end: .pod-info -->
+  <% end %>
 
   <div class="ep-box">
     <h4>Latest Episode</h4>
