@@ -10,6 +10,7 @@
   </div> <!-- // .title-box -->
 
   <div class="feeds-wrap-inner">
+
     <% @results.each do |result| %>
     <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">
       <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
