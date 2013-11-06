@@ -1,8 +1,8 @@
 <div class="side feeds">
 
   <div class="title-box">
-    <h1>PodCrawler</h1>
-    <p> The easiest way to search the <br />iTunes Podcast directory.</p>
+    <h1><a href="/">PodCrawler</a></h1>
+    <p>Search iTunes Podcasts, Fast!</p>
     <form method="get" action="/">
       <%= text_field_tag(:query, params[:query]) %>
       <%= submit_tag("", :id => "results-submit", :name => nil) %>
@@ -10,6 +10,40 @@
   </div> <!-- // .title-box -->
 
   <div class="feeds-wrap-inner">
+
+    <% unless params[:query].present? %>
+
+      <div class="pre-search">
+        <h4>Example searches</h4>
+        <ul class="pills">
+          <li><a class="sample-search">NPR</a></li>
+          <li><a class="sample-search">comics</a></li>
+          <li><a class="sample-search">startups</a></li>
+          <li><a class="sample-search">Redskins</a></li>
+          <li><a class="sample-search">sports</a></li>
+          <li><a class="sample-search">NFL</a></li>
+          <li><a class="sample-search">Brian Brushwood</a></li>
+          <li><a class="sample-search">5by5</a></li>
+          <li><a class="sample-search">Walking Dead</a></li>
+          <li><a class="sample-search">yoga</a></li>
+          <li><a class="sample-search">culture</a></li>
+          <li><a class="sample-search">movies</a></li>
+          <li><a class="sample-search">Arcade Fire</a></li>
+          <li><a class="sample-search">Bill Simmons</a></li>
+          <li><a class="sample-search">TWiT</a></li>
+          <li><a class="sample-search">Nerdist</a></li>
+          <li><a class="sample-search">responsive</a></li>
+          <li><a class="sample-search">design</a></li>
+          <li><a class="sample-search">Carolla</a></li>
+          <li><a class="sample-search">Eastbound &amp; Down</a></li>
+          <li><a class="sample-search">NHL</a></li>
+        </ul>
+        <h4>About</h4>
+        <p>PodCrawler was designed &amp; built by <a href="http://davidpots.com">@davidpots</a> to help you find podcasts faster. We all know that searching for podcasts (or anything) on iTunes is a stinky experience, riddled with too many clicks and a bloated interface. PodCrawler solves that problem by getting straight to the point.</p>
+        <p>If you like this tool, <a href="http://twitter.com/davidpots">follow me on Twitter</a> and also check out my <a href="http://songnotes.cc">Songnotes</a> project -- where I share my hand-crafted library of guitar tabs &amp; musical notation for songs I love.</p>
+      </div> <!-- end: pre-search -->
+
+    <% end %>
 
     <% @results.each do |result| %>
     <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">

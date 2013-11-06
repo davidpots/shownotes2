@@ -13,16 +13,19 @@
       text-align: center;
       font-size: 52px;
       line-height: 52px;
-      margin: 0 0 14px 0;
+      margin: 0 0 9px 0;
       font-family: "maven_pro_light200";
+      a {
+        color: $colorOoze;
+      }
     }
     p {
       text-align: center;
       font-weight: 300;
-      color: #9ba1a8;
-      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
       line-height: 20px;
-      margin: 0 0 16px 0;
+      margin: 0 0 18px 0;
     }
     form { 
       background: #fff;
@@ -52,6 +55,10 @@
         background: $colorOoze url(/assets/_icons/search-submit-passive.png) no-repeat 9px center;
         background-size: 20px 20px;
         border-radius: 0 18px 18px 0;
+        outline: none;
+      }
+      input[type="submit"]:active {
+        background-position: 9px 9px;
       }
     }
   }
@@ -62,6 +69,60 @@
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;    
   }
+
+  // Pre-Search stuff (before a user searches)
+  .pre-search {
+    padding: 20px 15px;
+    border-top: 1px solid $colorMurkLight;
+    h4 {
+      font-size: 16px;
+      line-height: 20px;
+      color: rgba(255,255,255,0.95);
+      font-weight: 300;
+      margin: 0 0 12px 0;
+    }
+    p {
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin: 0 0 20px 0;
+      a {
+        color: $colorOoze;
+      }
+    }
+    .pills { @include clearfix; margin: 0 0 24px 0; }
+    .pills li {
+      list-style: none;
+      float: left;
+      margin: 0 6px 6px 0;
+      a {
+        display: block;
+        padding: 6px 9px;
+        background: $colorMurkDark;
+        color: $colorMermaid;
+        cursor: pointer;
+        font-weight: 300;
+        border-radius: $radius;
+        -moz-transition: color .25s ease-in-out;
+        -webkit-transition: color .25s ease-in-out;
+        -o-transition: color .25s ease-in-out;
+        transition: color .25s ease-in-out;
+      }
+      a:hover {
+        color: $colorOoze;
+      }
+      a:active {
+        top: 1px;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
 
   .feed {
     display: table;
@@ -98,10 +159,10 @@
       left: 0;
       right: 0;
       background: rgba(6,46,71,0.32);
-      -moz-transition: background .25s linear;
-      -webkit-transition: background .25s linear;
-      -o-transition: background .25s linear;
-      transition: background .25s linear;
+      -moz-transition: background .25s ease-in-out;
+      -webkit-transition: background .25s ease-in-out;
+      -o-transition: background .25s ease-in-out;
+      transition: background .25s ease-in-out;
     }
 
     .text {
@@ -133,10 +194,10 @@
 @media only screen and (min-width: 800px) {
   .feeds .title-box {
     width: 300px;
-    position: fixed;    
+    // position: fixed;    
   }
   .feeds-wrap-inner {
-    top: 222px;
+    // top: 222px;
   }  
   .feeds .footer-box {
     width: 300px;
