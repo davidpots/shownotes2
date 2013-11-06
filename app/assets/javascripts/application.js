@@ -77,10 +77,8 @@ $(document).ready(function(){
   // If user clicks on a sample search link...
   $('body').on('click','.sample-search', function(){
     var sample_query = $(this).text();
-    $('.pre-search').fadeOut(200, function(){
-      $('#query').val(sample_query);
-      $('#results-submit').click();      
-    });
+    $('#query').val(sample_query);
+    $('#results-submit').click(); 
   });
 
 
