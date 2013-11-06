@@ -66,14 +66,14 @@
           .pod-info { margin: 0 0 32px 0; }
           .pod-info .actions { @include clearfix; margin: 0 0 10px 0; }
           .pod-info .actions li { list-style: none; float: left; margin: 0 7px 0 0; }
-          .pod-info .actions li a { display: block; padding: 0 9px; line-height: 32px; background: $colorAlizarin; color: #fff; font-weight: 300; border-radius: $radius; font-size: 14px; transition: background-color 0.2s ease; }
-          .pod-info .actions li a:hover { background-color: $colorPomegranate; }
+          .pod-info .actions li a { display: block; padding: 0 9px; line-height: 32px; background: $colorMermaid; color: #fff; font-weight: 300; border-radius: $radius; font-size: 14px; transition: background-color 0.2s ease; }
+          .pod-info .actions li a:hover { background-color: $colorMermaidDark; }
           .pod-info .actions li a:active { top: 1px; }
         }
         
         .ep-box .eps { margin: 14px 0 40px;
           .ep { list-style: none; background: $colorClouds; border-radius: $radius; overflow: hidden; margin: 0 0 20px 0; }
-          .ep > a { display: block; background: $colorNiceBlue; color: #fff; padding: 13px $sidePadding 11px; transition: background-color 0.2s ease; }
+          .ep > a { display: block; background: $colorOozeDark; color: #fff; padding: 13px $sidePadding 11px; transition: background-color 0.2s ease; }
           .ep > a:hover { background: $colorNiceBlueDark; }
           .ep > a .datetime { opacity: 0.6; font-weight: 300; font-size: 12px; line-height: 12px; margin: 0 0 5px 0; }
           .ep > a .datetime .time { display: none; }

@@ -1,5 +1,5 @@
 .feeds {
-  background: $colorWetAsphalt;
+  background: $colorMurk;
   padding: 0;
   color: #fff;
 
@@ -7,10 +7,9 @@
     padding: 32px 20px 32px;
     width: 100%;
     z-index: 20;
-    background: $colorMidnightBlue;
     h1 {
       font-weight: normal;
-      color: #ebf1f8;
+      color: $colorOoze;
       text-align: center;
       font-size: 52px;
       line-height: 52px;
@@ -26,9 +25,9 @@
       margin: 0 0 16px 0;
     }
     form { 
-      background: $dark-border-darker;
-      height: 40px;
-      border-radius: 20px;
+      background: #fff;
+      height: 36px;
+      border-radius: 18px;
       margin: 0 auto;
       width: 260px;
       @include clearfix;
@@ -37,8 +36,8 @@
         background: none;
         border: none;
         overflow: hidden;
-        color: #fff;
-        height:40px;
+        color: $colorMurk;
+        height:36px;
         padding: 0 15px;
         font:1.2em/1.2 "Source Sans Pro", Arial, sans-serif;
         outline: none;
@@ -46,13 +45,13 @@
       }
       input[type="submit"] {
         float: right;
-        width: 50px;
-        height: 40px;
-        background: transparent;
+        width: 40px;
+        height: 36px;
         padding: 0;
         border: none;
-        background: url(/assets/_icons/search-submit-passive.png) no-repeat center;
+        background: $colorOoze url(/assets/_icons/search-submit-passive.png) no-repeat 9px center;
         background-size: 20px 20px;
+        border-radius: 0 18px 18px 0;
       }
     }
   }
@@ -69,18 +68,40 @@
     overflow:hidden; width:auto; 
     padding: 10px 12px; 
     cursor: pointer;
-    border-bottom: 1px solid $colorMidnightBlue;
+    border-bottom: 1px solid $colorMurkLight;
     background-color: transparent;
     transition: background-color 0.1s ease-in-out;
     &:first-child {
-      border-top: 1px solid $colorMidnightBlue;
+      border-top: 1px solid $colorMurkLight;
     }
 
     .thumbnail {
       display: table-cell;
       height: 40px;
       width: 40px;
-      border-radius: 4px;
+      img {
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+        -webkit-filter: grayscale(0.32);
+      }
+    }
+
+    .thumbnail:before {
+      content: "";
+      z-index: 999;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(6,46,71,0.32);
+      -moz-transition: background .25s linear;
+      -webkit-transition: background .25s linear;
+      -o-transition: background .25s linear;
+      transition: background .25s linear;
     }
 
     .text {
@@ -122,13 +143,17 @@
   }
 
   .feeds .feed:hover {
-    background-color: rgba(31,37,42,0.27);
+    background-color: $colorMurkDark;
     transition: background-color 0.1s ease-in-out;
+    .thumbnail img { -webkit-filter: grayscale(0); }
+    .thumbnail:before { background: none; }
   }
 
   .feeds .feed.active {
-    background-color: $colorAlizarin; 
+    background-color: rgba(50,171,193,0.77); 
     transition: background-color 0.1s ease-in-out;
+    .thumbnail img { -webkit-filter: grayscale(0); }
+    .thumbnail:before { background: none; }
     .text {
       background-image: url(/assets/_icons/feed-carrot-active.png);
       transition: background-image 0.1s ease-in-out;

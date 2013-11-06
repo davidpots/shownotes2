@@ -13,7 +13,7 @@
 
     <% @results.each do |result| %>
     <a class="feed" data-url-rss="<%= result['feedUrl'] %>" data-url-itunes="<%= result['trackViewUrl'] %>">
-      <img class="thumbnail" src="<%= result['artworkUrl100'] %>" />
+      <div class="thumbnail"><img src="<%= result['artworkUrl100'] %>" /></div>
       <div class="text">
         <h3><%= result['collectionName'] %></h3>
       </div>
