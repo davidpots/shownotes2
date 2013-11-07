@@ -128,6 +128,7 @@ $(document).ready(function(){
             $('.search-clear').addClass('hidden');
           } else if ( length > 0 ) {
             $('.search-clear').removeClass('hidden');
+            $('.title-inner').removeClass('fadein');
           }
         }
 
