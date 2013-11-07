@@ -16,6 +16,11 @@
 
 
 
+// Global Variables
+
+    // Used later to determine length of text in search query text input
+    var queryLength;
+
 
 
 // Add/remove a class based on size of window. Inspired by https://gist.github.com/RyanBrackett/6107983
@@ -84,7 +89,7 @@ $(document).ready(function(){
            $('.search-clear').addClass('hidden');
         });
 
-        var queryLength = $('#query').val().length;
+        queryLength = $('#query').val().length;
         
         // On page load, show the X if search string exists
         if ( queryLength > 0 ) {
@@ -98,6 +103,8 @@ $(document).ready(function(){
             $('.search-clear').addClass('hidden');
           }
         });
+
+
 
 
 
@@ -125,6 +132,15 @@ $(document).ready(function(){
 
 });
 
+
+$(document).on('input', '#query', function(){
+  // queryLength = $('#query').val().length;
+  // if ( queryLength > 0 ) {
+  //   $('.search-clear').removeClass('hidden');
+  // } else if ( queryLength == 0 ) {
+  //   $('.search-clear').addClass('hidden');
+  // }
+});
 
 
 
@@ -181,9 +197,6 @@ $(document).ready(function(){
         function() { /* user went BACK: remove hash */ 
           $('body').removeClass('showing-details');
           $('#podcast_wrap_inner').empty();
-          if ( queryLength > 0 ) {
-            $('.search-clear').removeClass('hidden');
-          }
         },
         function() { /* user went FORWARD: do nothing */ }
       ));
