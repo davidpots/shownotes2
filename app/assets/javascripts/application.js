@@ -15,6 +15,10 @@
 //= require_tree .
 
 
+        $(window).bind("load", function() {
+          $('.fadein').css('opacity','1');
+        });
+
 
 // Add/remove a class based on size of window. Inspired by https://gist.github.com/RyanBrackett/6107983
 // This is used so I can know if a mobile device vs. a desktop device.

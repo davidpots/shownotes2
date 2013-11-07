@@ -1,16 +1,18 @@
 <div class="side feeds">
 
   <div class="title-box">
-    <h1><a href="/">PodCrawler</a></h1>
-    <p>Search iTunes Podcasts, Fast!</p>
-    <form method="get" action="/">
-      <%= text_field_tag(:query, params[:query]) %>
-      <span class="search-clear"></span>
-      <%= submit_tag("", :id => "results-submit", :name => nil) %>
-    </form>
+    <div class="title-inner fadein">
+      <h1><a href="/">PodCrawler</a></h1>
+      <p>Search iTunes Podcasts, Fast!</p>
+      <form method="get" action="/">
+        <%= text_field_tag(:query, params[:query]) %>
+        <span class="search-clear"></span>
+        <%= submit_tag("", :id => "results-submit", :name => nil) %>
+      </form>
+    </div> <!-- end: title-inner -->
   </div> <!-- // .title-box -->
 
-  <div class="feeds-wrap-inner">
+  <div class="feeds-wrap-inner fadein">
 
     <% unless params[:query].present? %>
 
