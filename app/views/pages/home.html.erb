@@ -5,6 +5,7 @@
     <p>Search iTunes Podcasts, Fast!</p>
     <form method="get" action="/">
       <%= text_field_tag(:query, params[:query]) %>
+      <span class="search-clear hidden"></span>
       <%= submit_tag("", :id => "results-submit", :name => nil) %>
     </form>
   </div> <!-- // .title-box -->

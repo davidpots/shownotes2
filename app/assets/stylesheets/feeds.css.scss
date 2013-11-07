@@ -36,8 +36,9 @@
       width: 260px;
       @include clearfix;
       input[type="text"] {
-        float: left;
+        position: absolute;
         background: none;
+        left: 0; top: 0; bottom: 0; right: 72px;
         border: none;
         overflow: hidden;
         color: $colorMurk;
@@ -45,10 +46,27 @@
         padding: 0 15px;
         font:1.2em/1.2 "Source Sans Pro", Arial, sans-serif;
         outline: none;
-        width: 80%;
+      }
+      .search-clear {
+        display: block;
+        position: absolute;
+        right: 40px;
+        top: 0; bottom: 0;
+        width: 32px;
+        background: url(/assets/_icons/search-x-passive.png) no-repeat center;
+        background-size: 10px 10px;
+        &:hover { 
+          background: url(/assets/_icons/search-x-active.png) no-repeat center;
+          background-size: 10px 10px;
+          cursor: pointer; 
+        }
+        &.hidden {
+          display: none;
+        }
       }
       input[type="submit"] {
-        float: right;
+        position: absolute;
+        right: 0; top: 0; bottom: 0;
         width: 40px;
         height: 36px;
         padding: 0;
@@ -170,6 +188,9 @@
     position: fixed;
     border-bottom: 1px solid $colorMurkDark;
   }
+
+  .feeds .title-box form .search-clear { display: none; }
+
   .feeds-wrap-inner {
     top: 207px; // height of .title-box
   }

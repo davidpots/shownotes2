@@ -74,6 +74,34 @@ $(document).ready(function(){
   });
 
 
+
+
+// Clearing the search field with an X. Inspired by http://stackoverflow.com/questions/7003435/how-get-jquery-realtime-value-of-input
+
+        // If a user clicks the 'x' to clear their search...
+        $('.search-clear').click(function(){
+           $(this).prev().val("").focus()
+           $('.search-clear').addClass('hidden');
+        });
+
+        var queryLength = $('#query').val().length;
+        
+        // On page load, show the X if search string exists
+        if ( queryLength > 0 ) {
+          $('.search-clear').removeClass('hidden');
+        }
+        // When typing, check for search string and show/hide X accordingly
+        $("#query").bind("keyup", function(){
+          if ( queryLength > 0 ) {
+            $('.search-clear').removeClass('hidden');
+          } else {
+            $('.search-clear').addClass('hidden');
+          }
+        });
+
+
+
+
   // If user clicks on a sample search link...
   $('body').on('click','.sample-search', function(){
     var sample_query = $(this).text();
