@@ -4,7 +4,7 @@
   color: #fff;
 
   .title-box {
-    padding: 32px 20px 32px;
+    padding: 32px 20px 36px;
     width: 100%;
     z-index: 20;
     background: $colorMurk;
@@ -171,7 +171,7 @@
     border-bottom: 1px solid $colorMurkDark;
   }
   .feeds-wrap-inner {
-    top: 199px; // height of .title-box
+    top: 203px; // height of .title-box
   }
 
   // Hover state for recommended search links
