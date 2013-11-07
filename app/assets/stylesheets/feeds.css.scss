@@ -107,22 +107,11 @@
         -o-transition: color .25s ease-in-out;
         transition: color .25s ease-in-out;
       }
-      a:hover {
-        color: $colorOoze;
-      }
       a:active {
         top: 1px;
       }
     }
   }
-
-
-
-
-
-
-
-
 
   .feed {
     display: table;
@@ -199,8 +188,10 @@
   .feeds-wrap-inner {
     // top: 222px;
   }  
-  .feeds .footer-box {
-    width: 300px;
+
+  // Hover state for recommended search links
+  .pre-search .pills li a:hover {
+    color: $colorOoze;
   }
 
   .feeds .feed:hover {
