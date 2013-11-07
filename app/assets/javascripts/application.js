@@ -177,13 +177,20 @@ $(document).ready(function(){
 
 $(window).bind("pageshow", function(event) {
     if (event.originalEvent.persisted) {
-      alert("#1: From back / forward cache.");
+      // alert("#1: From back / forward cache.");
+
+        // determine length of search query
+        var queryLength = $('#query').val().length;
+
+        // On page load, show the X if search string exists
+        showOrHideX(queryLength);
+
     }
 });
 
 window.onpageshow = function(event) {
     if (event.persisted) {
-        alert("#2: From back / forward cache.");
+        // alert("#2: From back / forward cache.");
     }
 };
 
