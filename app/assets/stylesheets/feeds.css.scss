@@ -7,6 +7,7 @@
     padding: 32px 20px 32px;
     width: 100%;
     z-index: 20;
+    background: $colorMurk;
     h1 {
       font-weight: normal;
       color: $colorOoze;
@@ -134,25 +135,9 @@
         height: 40px;
         width: 40px;
         border-radius: 4px;
-        -webkit-filter: grayscale(0.32);
       }
     }
 
-    .thumbnail:before {
-      content: "";
-      z-index: 999;
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(6,46,71,0.32);
-      -moz-transition: background .25s ease-in-out;
-      -webkit-transition: background .25s ease-in-out;
-      -o-transition: background .25s ease-in-out;
-      transition: background .25s ease-in-out;
-    }
 
     .text {
       width: 100%;
@@ -183,11 +168,12 @@
 @media only screen and (min-width: 800px) {
   .feeds .title-box {
     width: 300px;
-    // position: fixed;    
+    position: fixed;
+    border-bottom: 1px solid $colorMurkDark;
   }
   .feeds-wrap-inner {
-    // top: 222px;
-  }  
+    top: 199px; // height of .title-box
+  }
 
   // Hover state for recommended search links
   .pre-search .pills li a:hover {
