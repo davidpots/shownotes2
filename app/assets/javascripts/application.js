@@ -16,13 +16,6 @@
 
 
 
-// Global Variables
-
-    // Used later to determine length of text in search query text input
-    var queryLength;
-
-
-
 // Add/remove a class based on size of window. Inspired by https://gist.github.com/RyanBrackett/6107983
 // This is used so I can know if a mobile device vs. a desktop device.
 
@@ -81,28 +74,8 @@ $(document).ready(function(){
 
 
 
-// Clearing the search field with an X. Inspired by http://stackoverflow.com/questions/7003435/how-get-jquery-realtime-value-of-input
 
-        // If a user clicks the 'x' to clear their search...
-        $('.search-clear').click(function(){
-           $(this).prev().val("").focus()
-           $('.search-clear').addClass('hidden');
-        });
 
-        queryLength = $('#query').val().length;
-        
-        // On page load, show the X if search string exists
-        if ( queryLength > 0 ) {
-          $('.search-clear').removeClass('hidden');
-        }
-        // When typing, check for search string and show/hide X accordingly
-        $("#query").bind("keyup", function(){
-          if ( queryLength > 0 ) {
-            $('.search-clear').removeClass('hidden');
-          } else {
-            $('.search-clear').addClass('hidden');
-          }
-        });
 
 
 
@@ -133,14 +106,56 @@ $(document).ready(function(){
 });
 
 
-$(document).on('input', '#query', function(){
-  // queryLength = $('#query').val().length;
-  // if ( queryLength > 0 ) {
-  //   $('.search-clear').removeClass('hidden');
-  // } else if ( queryLength == 0 ) {
-  //   $('.search-clear').addClass('hidden');
-  // }
-});
+
+
+
+
+
+
+
+
+
+// Clearing the search field with an X. Inspired by http://stackoverflow.com/questions/7003435/how-get-jquery-realtime-value-of-input
+
+        
+
+        function showOrHideX(length) {
+          if ( length == 0 ) {
+            $('.search-clear').addClass('hidden');
+          } else if ( length > 0 ) {
+            $('.search-clear').removeClass('hidden');
+          }
+        }
+
+        // Run the following after page is finished loading
+        $(window).bind("load", function() {
+
+                // determine length of search query
+                var queryLength = $('#query').val().length;
+
+                // On page load, show the X if search string exists
+                showOrHideX(queryLength);
+
+                // When typing, check for search string and show/hide X accordingly
+                $("#query").bind("keyup", function(){
+                  // on each keystroke, re-calculate the queryLength
+                  queryLength = $('#query').val().length;
+                  // determine if X appears or not
+                  showOrHideX(queryLength);
+                });
+
+                // If a user clicks the 'x', clear their search...
+                $('.search-clear').click(function(){
+                   $(this).prev().val("").focus()
+                   $('.search-clear').addClass('hidden');
+                });
+
+        });
+
+
+
+        
+
 
 
 
