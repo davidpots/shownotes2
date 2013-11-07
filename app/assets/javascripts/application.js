@@ -181,6 +181,9 @@ $(document).ready(function(){
         function() { /* user went BACK: remove hash */ 
           $('body').removeClass('showing-details');
           $('#podcast_wrap_inner').empty();
+          if ( queryLength > 0 ) {
+            $('.search-clear').removeClass('hidden');
+          }
         },
         function() { /* user went FORWARD: do nothing */ }
       ));
