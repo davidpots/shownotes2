@@ -159,6 +159,48 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// solve the backforward cache problem in mobiel safari
+
+$(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+      alert("#1: From back / forward cache.");
+    }
+});
+
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        alert("#2: From back / forward cache.");
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
 
 
