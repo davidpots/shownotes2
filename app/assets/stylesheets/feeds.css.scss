@@ -44,7 +44,7 @@
       input[type="text"] {
         position: absolute;
         background: none;
-        left: 0; top: 0; bottom: 0; right: 72px;
+        left: 0; top: 0; bottom: 0; right: 40px;
         border: none;
         overflow: hidden;
         color: $colorMurk;
@@ -52,8 +52,10 @@
         padding: 0 15px;
         font:1.2em/1.2 "Source Sans Pro", Arial, sans-serif;
         outline: none;
+        z-index: 10;
       }
       .search-clear {
+        z-index: 11;
         display: block;
         position: absolute;
         right: 40px;
