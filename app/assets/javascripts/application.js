@@ -157,6 +157,15 @@ $(document).ready(function(){
 
         });
 
+        // This solves the back-forward cache problem in mobile safari (where the "X" would disappear if a user goes BACK, even if search field is populated). via http://stackoverflow.com/questions/11979156/mobile-safari-back-button
+        $(window).bind("pageshow", function(event) {
+            if (event.originalEvent.persisted) {
+              // determine length of search query
+              var queryLength = $('#query').val().length;
+              // On page load, show the X if search string exists
+              showOrHideX(queryLength);
+            }
+        });
 
 
 
@@ -173,26 +182,6 @@ $(document).ready(function(){
 
 
 
-// solve the backforward cache problem in mobiel safari
-
-$(window).bind("pageshow", function(event) {
-    if (event.originalEvent.persisted) {
-      // alert("#1: From back / forward cache.");
-
-        // determine length of search query
-        var queryLength = $('#query').val().length;
-
-        // On page load, show the X if search string exists
-        showOrHideX(queryLength);
-
-    }
-});
-
-window.onpageshow = function(event) {
-    if (event.persisted) {
-        // alert("#2: From back / forward cache.");
-    }
-};
 
 
 
